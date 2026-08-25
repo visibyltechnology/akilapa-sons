@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ShoppingCart, Trash2, Plus, Minus, ArrowRight, Tag, Truck, ShieldCheck } from 'lucide-react';
 import { formatCurrency } from '../utils/helpers';
 import { useApp } from '../context/AppContext';
+import './Cart.css';
 
 export default function Cart() {
   const { cart: items, updateCartQty: updateQty, removeFromCart: removeItem } = useApp();
@@ -69,7 +70,7 @@ export default function Cart() {
 
                   {/* Price */}
                   <div className="item-price-col">
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '17px', fontWeight: 800, color: 'var(--primary)', whiteSpace: 'nowrap' }}>{formatCurrency(item.price * item.qty)}</div>
+                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '17px', fontWeight: 800, color: 'var(--primary)', whiteSpace: 'nowrap' }}>{formatCurrency(item.price * item.qty)}</div>
                     <div style={{ fontSize: '11px', color: 'var(--gray-1)', whiteSpace: 'nowrap' }}>{formatCurrency(item.price)} each</div>
                   </div>
                 </div>
@@ -78,7 +79,7 @@ export default function Cart() {
 
             {/* Order Summary */}
             <div style={{ background: 'var(--dark-card)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-lg)', padding: '24px', position: 'sticky', top: '90px' }}>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 800, marginBottom: '20px', paddingBottom: '16px', borderBottom: '1px solid var(--dark-border)' }}>Order Summary</h3>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 800, marginBottom: '20px', paddingBottom: '16px', borderBottom: '1px solid var(--dark-border)' }}>Order Summary</h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', color: 'var(--gray-1)' }}>
@@ -109,11 +110,11 @@ export default function Cart() {
               </div>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0', borderTop: '1px solid var(--dark-border)', marginBottom: '20px' }}>
-                <span style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 800 }}>Total</span>
-                <span style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 900, color: 'var(--primary)' }}>{formatCurrency(total)}</span>
+                <span style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 800 }}>Total</span>
+                <span style={{ fontFamily: 'var(--font-heading)', fontSize: '22px', fontWeight: 900, color: 'var(--primary)' }}>{formatCurrency(total)}</span>
               </div>
 
-              <Link to="/checkout" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', background: 'var(--primary)', color: 'var(--black)', padding: '16px', borderRadius: 'var(--radius-md)', fontWeight: 800, fontSize: '16px', fontFamily: 'var(--font-display)', boxShadow: '0 8px 24px var(--primary-glow)', marginBottom: '16px' }}>
+              <Link to="/checkout" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', background: 'var(--primary)', color: 'var(--black)', padding: '16px', borderRadius: 'var(--radius-md)', fontWeight: 800, fontSize: '16px', fontFamily: 'var(--font-heading)', boxShadow: '0 8px 24px var(--primary-glow)', marginBottom: '16px' }}>
                 Proceed to Checkout <ArrowRight size={18} />
               </Link>
 
