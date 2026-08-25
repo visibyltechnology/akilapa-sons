@@ -7,6 +7,7 @@ import { ProductCard } from '../components/Products/ProductCard';
 import { categorySpecs } from '../data/taxonomy';
 import { Loader2, SlidersHorizontal, X } from 'lucide-react';
 import SEO from '../components/SEO';
+import './Shop.css';
 
 export default function Shop() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -174,7 +175,7 @@ export default function Shop() {
         url="/shop"
       />
       <div className="section-header">
-        <h1 className="section-title">Shop <span className="title-accent">Electronics</span></h1>
+        <h1 className="section-title">Shop <span className="title-accent">Car Parts</span></h1>
         <div className="text-primary" style={{ fontSize: '13px', fontWeight: 600 }}>Home / Shop{activeCategory ? ` / ${activeCategory}` : ''}</div>
       </div>
 
