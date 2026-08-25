@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, Menu, X, Search, ChevronDown, User, LogIn } from 'lucide-react';
+import { ShoppingCart, Menu, X, Search, ChevronDown, User, LogIn, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useModal } from '../context/ModalContext';
 import { useApp } from '../context/AppContext';
@@ -123,6 +123,11 @@ export default function Navbar() {
               <Search size={22} />
             </button>
           </div>
+
+          {/* Wishlist */}
+          <Link to="/wishlist" className="icon-btn" aria-label="Wishlist" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Heart size={22} />
+          </Link>
 
           {/* Cart */}
           <button className="icon-btn cart-btn" aria-label="Cart" onClick={openCart}>

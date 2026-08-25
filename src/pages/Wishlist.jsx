@@ -10,7 +10,7 @@ export default function Wishlist() {
   return (
     <main className="main-content" style={{ padding: '28px 20px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '28px', fontWeight: 800, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '28px', fontWeight: 800, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
           <Heart size={28} color="var(--primary)" /> Saved Items
           <span style={{ fontSize: '16px', color: 'var(--gray-1)', fontWeight: 400 }}>({wishlist.length} items)</span>
         </h1>
@@ -20,8 +20,8 @@ export default function Wishlist() {
             <Heart size={80} color="var(--gray-2)" strokeWidth={1} style={{ margin: '0 auto 20px' }} />
             <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '8px' }}>Your wishlist is empty</h2>
             <p style={{ color: 'var(--gray-1)', marginBottom: '24px' }}>Save items you love to keep track of them here.</p>
-            <Link to="/shop" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--primary)', color: 'var(--black)', padding: '14px 28px', borderRadius: 'var(--radius-md)', fontWeight: 800 }}>
-              Start Shopping <ArrowRight size={18} />
+            <Link to="/parts" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--primary)', color: '#fff', padding: '14px 28px', borderRadius: 'var(--radius-md)', fontWeight: 800, textDecoration: 'none' }}>
+              Browse Car Parts <ArrowRight size={18} />
             </Link>
           </div>
         ) : (
@@ -42,8 +42,10 @@ export default function Wishlist() {
                   <div className="product-brand">{product.brand}</div>
                   <Link to={`/product/${product.id}`} className="product-title">{product.name}</Link>
                   <div className="product-rating">
-                    <span className="stars">★★★★★</span>
-                    <span className="count">(42)</span>
+                    <span className="stars" style={{ color: 'var(--primary)' }}>
+                      {'★'.repeat(Math.min(5, Math.floor(Number(product.rating) || 5)))}
+                    </span>
+                    <span className="count">({product.reviews || 0})</span>
                   </div>
                   <div className="product-price-row">
                     <div className="product-price">{formatCurrency(product.price)}</div>
