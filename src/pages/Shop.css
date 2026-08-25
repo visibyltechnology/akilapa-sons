@@ -154,3 +154,190 @@
     gap: 12px;
   }
 }
+
+/* ── Shop Toolbar ── */
+.shop-results-count {
+  font-size: 13px;
+  color: var(--gray-1);
+}
+
+.shop-sort-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.sort-label {
+  font-size: 13px;
+  color: var(--gray-1);
+  white-space: nowrap;
+}
+
+.sort-select {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-size: 13px;
+  padding: 6px 10px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.sort-select:focus {
+  border-color: var(--primary);
+}
+
+.view-toggles {
+  display: flex;
+  gap: 4px;
+}
+
+.view-btn {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-sm);
+  color: var(--gray-1);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.view-btn.active,
+.view-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(211, 47, 47, 0.1);
+}
+
+.mobile-filter-toggle {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.2s ease;
+}
+
+.mobile-filter-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .mobile-filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+/* ── Filter Sidebar Items ── */
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gray-1);
+  cursor: pointer;
+  padding: 3px 0;
+  transition: color 0.2s ease;
+}
+
+.filter-item:hover {
+  color: var(--white);
+}
+
+.filter-checkbox {
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid var(--gray-2);
+  border-radius: 3px;
+  cursor: pointer;
+  accent-color: var(--primary);
+  flex-shrink: 0;
+}
+
+.filter-count {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--gray-2);
+  background: rgba(255,255,255,0.05);
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+/* ── Price Range Inputs ── */
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price-inputs span {
+  color: var(--gray-2);
+  font-size: 13px;
+}
+
+.price-input {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-size: 13px;
+  padding: 7px 10px;
+  outline: none;
+  min-width: 0;
+  transition: border-color 0.2s ease;
+}
+
+.price-input:focus {
+  border-color: var(--primary);
+}
+
+.price-input::placeholder {
+  color: var(--gray-2);
+}
+
+/* Remove number input arrows */
+.price-input::-webkit-outer-spin-button,
+.price-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ── Spinner ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── Danger color ── */
+:root {
+  --danger: #ef4444;
+}
+

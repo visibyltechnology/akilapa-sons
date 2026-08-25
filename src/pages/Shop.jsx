@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useParams } from 'react-router-dom';
 
 import { getProducts } from '../utils/productService';
 import { listenToCategories } from '../utils/catalogService';
@@ -11,19 +11,40 @@ import './Shop.css';
 
 export default function Shop() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { category: urlCategory } = useParams();
   const searchQuery = searchParams.get('q') || '';
-  const initialDept = searchParams.get('dept');
+  const initialDept = urlCategory || searchParams.get('dept');
 
   const [view, setView] = useState('grid');
   const [activeCategory, setActiveCategory] = useState(initialDept || null);
   const [expandedDept, setExpandedDept] = useState(initialDept || null);
 
   useEffect(() => {
-    if (initialDept) {
-      setActiveCategory(initialDept);
-      setExpandedDept(initialDept);
+    const cat = urlCategory || searchParams.get('dept');
+    if (cat) {
+      setActiveCategory(cat);
+      setExpandedDept(cat);
     }
-  }, [initialDept]);
+  }, [urlCategory, searchParams]);
+
+  // Map URL slugs to actual department names
+  const SLUG_MAP = {
+    oils: 'Engine Oils', tyres: 'Tyres', tires: 'Tyres',
+    batteries: 'Batteries', battery: 'Batteries',
+    brakes: 'Brake Systems', brake: 'Brake Systems',
+    engine: 'Engine Parts', filters: 'Filters', filter: 'Filters',
+    suspension: 'Suspension', electrical: 'Electrical', electric: 'Electrical'
+  };
+
+  // Resolve active category — supports slug, exact match, or partial case-insensitive
+  const resolveCategory = (cat) => {
+    if (!cat) return null;
+    const lower = cat.toLowerCase();
+    if (SLUG_MAP[lower]) return SLUG_MAP[lower];
+    return cat; // pass through for exact department names
+  };
+
+  const resolvedCategory = resolveCategory(activeCategory);
   const [selectedFilters, setSelectedFilters] = useState({});
   const [priceMin, setPriceMin] = useState('');
   const [priceMax, setPriceMax] = useState('');
@@ -78,10 +99,10 @@ export default function Shop() {
 
   // Derive unique spec options from actual products in the active category
   const categoryProducts = products.filter(p =>
-    !activeCategory ||
-    p.department === activeCategory ||
-    p.category === activeCategory ||
-    p.subcategory === activeCategory
+    !resolvedCategory ||
+    p.department?.toLowerCase().includes(resolvedCategory.toLowerCase()) ||
+    p.category?.toLowerCase().includes(resolvedCategory.toLowerCase()) ||
+    p.subcategory?.toLowerCase().includes(resolvedCategory.toLowerCase())
   );
 
   // Build dynamic spec filters from actual product specs
@@ -121,10 +142,10 @@ export default function Shop() {
   const activeFilterCount = Object.values(selectedFilters).flat().length;
 
   const filteredProducts = products.filter(p => {
-    const matchCat = !activeCategory ||
-      p.department === activeCategory ||
-      p.category === activeCategory ||
-      p.subcategory === activeCategory;
+    const matchCat = !resolvedCategory ||
+      p.department?.toLowerCase().includes(resolvedCategory.toLowerCase()) ||
+      p.category?.toLowerCase().includes(resolvedCategory.toLowerCase()) ||
+      p.subcategory?.toLowerCase().includes(resolvedCategory.toLowerCase());
 
     const matchBrand = (!selectedFilters.brand?.length) || selectedFilters.brand.includes(p.brand);
 
@@ -168,11 +189,11 @@ export default function Shop() {
   return (
     <main className="main-content" id="main">
       <SEO
-        title={activeCategory ? `Buy ${activeCategory} in Nigeria` : searchQuery ? `"${searchQuery}" - Electronics Nigeria` : 'Shop All Electronics in Nigeria'}
+        title={activeCategory ? `Buy ${activeCategory} Car Parts in Nigeria | Akilapa & Sons` : searchQuery ? `"${searchQuery}" - Car Parts Nigeria | Akilapa & Sons` : 'Shop All Car Parts in Nigeria | Akilapa & Sons'}
         description={activeCategory
           ? `Shop ${activeCategory} car parts in Nigeria at Akilapa & Sons. Genuine parts, best prices, fast delivery.`
           : 'Browse our full collection of genuine car parts, engine oils, batteries, tyres and accessories. Osun State, Nigeria.'}
-        url="/shop"
+        url="/parts"
       />
       <div className="section-header">
         <h1 className="section-title">Shop <span className="title-accent">Car Parts</span></h1>
@@ -325,7 +346,7 @@ export default function Shop() {
         </aside>
 
         {/* ── Main Product Area ──────────────────────────── */}
-        <section className="shop-main">
+        <section className="shop-content">
           <div className="shop-toolbar">
             <div className="shop-results-count">
               Showing <span>{filteredProducts.length}</span> of <span>{products.length}</span> products

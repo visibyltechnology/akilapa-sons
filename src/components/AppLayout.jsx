@@ -5,6 +5,7 @@ import Footer from './Footer';
 import WhatsAppCartDrawer from './UX/WhatsAppCartDrawer';
 import InstantQuoteBuilder from './UX/InstantQuoteBuilder';
 import SubscriptionModal from './Subscriptions/SubscriptionModal';
+import FloatingWidgets from './FloatingWidgets';
 import { useModal } from '../context/ModalContext';
 
 export default function AppLayout({ children }) {
@@ -17,6 +18,7 @@ export default function AppLayout({ children }) {
         {children}
       </main>
       <Footer />
+      <FloatingWidgets />
       <WhatsAppCartDrawer isOpen={isCartOpen} onClose={closeCart} />
       <InstantQuoteBuilder isOpen={isQuoteOpen} onClose={closeQuote} />
       <SubscriptionModal isOpen={isSubOpen} onClose={closeSub} />
