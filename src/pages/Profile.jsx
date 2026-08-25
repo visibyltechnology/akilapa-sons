@@ -5,7 +5,7 @@ import { uploadImage } from '../utils/cloudinaryService';
 import { useApp } from '../context/AppContext';
 import { db } from '../firebase';
 import { doc, updateDoc, collection, query, where, orderBy, getDocs } from 'firebase/firestore';
-import { formatCurrency } from './Home';
+import { formatCurrency } from '../utils/helpers';
 
 const STATUS_COLORS = {
   Delivered: { color: '#00E676', bg: 'rgba(0,230,118,0.12)' },

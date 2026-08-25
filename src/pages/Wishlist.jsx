@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, ShoppingCart, Trash2, ArrowRight } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { formatCurrency } from './Home';
+import { formatCurrency } from '../utils/helpers';
 
 export default function Wishlist() {
   const { wishlist, removeFromWishlist, addToCart } = useApp();

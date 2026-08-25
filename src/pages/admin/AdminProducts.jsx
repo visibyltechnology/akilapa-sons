@@ -6,7 +6,7 @@ import {
   Package, PlusCircle, Search, Trash2, Edit, Eye, EyeOff,
   Star, Loader2, SlidersHorizontal
 } from 'lucide-react';
-import { formatCurrency } from '../Home';
+import { formatCurrency } from '../../utils/helpers';
 
 const CATEGORIES = ['All', 'Smartphones', 'Laptops', 'Televisions', 'Audio', 'Gaming', 'Accessories', 'Home Appliances'];
 

@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { Link, useNavigate } from 'react-router-dom';
 import { CreditCard, MapPin, Truck, ShieldCheck, ChevronRight, CheckCircle, Zap, Upload, AlertCircle, Loader2, X } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { formatCurrency } from './Home';
+import { formatCurrency } from '../utils/helpers';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { uploadImage } from '../utils/cloudinaryService';
