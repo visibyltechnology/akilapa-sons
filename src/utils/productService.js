@@ -9,7 +9,7 @@ const MOCK_PRODUCTS = [
     id: "mock_1", name: "Castrol Edge 5W-30 Advanced Full Synthetic Engine Oil",
     price: 15500, originalPrice: 18000,
     department: "Engine Oils", category: "Synthetic Oils", brand: "Castrol",
-    images: ["https://m.media-amazon.com/images/I/71uK5cWkQ-L._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1635787612140-5291f3a2d5de?auto=format&fit=crop&q=80&w=400"],
     description: "Premium full synthetic motor oil for maximum performance.",
     rating: 5, reviews: 128, stock: 24, badge: 'sale',
     features: ["Advanced protection", "5W-30", "Full Synthetic"], createdAt: new Date().toISOString()
@@ -18,7 +18,7 @@ const MOCK_PRODUCTS = [
     id: "mock_2", name: "Mobil 1 0W-40 Extended Performance Engine Oil (4L)",
     price: 19800,
     department: "Engine Oils", category: "Synthetic Oils", brand: "Mobil",
-    images: ["https://m.media-amazon.com/images/I/51+yA6gLbLL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1611768974565-028b6b49cc32?auto=format&fit=crop&q=80&w=400"],
     description: "Extended performance synthetic oil for high-mileage engines.",
     rating: 5, reviews: 94, stock: 18, badge: 'hot',
     features: ["0W-40", "Extended intervals", "Full Synthetic"], createdAt: new Date().toISOString()
@@ -27,7 +27,7 @@ const MOCK_PRODUCTS = [
     id: "mock_3", name: "Total Quartz 5W-40 INEO Engine Oil",
     price: 12000,
     department: "Engine Oils", category: "Synthetic Oils", brand: "Total",
-    images: ["https://m.media-amazon.com/images/I/61xr3u5OEML._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=400"],
     description: "Fuel economy and emission system protection.",
     rating: 4, reviews: 67, stock: 32,
     features: ["5W-40", "Low SAPS", "Eco-friendly"], createdAt: new Date().toISOString()
@@ -46,7 +46,7 @@ const MOCK_PRODUCTS = [
     id: "mock_5", name: "Bridgestone Turanza T005 225/45 R17",
     price: 78000,
     department: "Tyres", category: "Premium Tyres", brand: "Bridgestone",
-    images: ["https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&q=80&w=400"],
+    images: ["https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&q=80&w=400"],
     description: "Superior comfort and handling for luxury vehicles.",
     rating: 5, reviews: 156, stock: 8,
     features: ["Comfort ride", "Low noise", "Excellent handling"], createdAt: new Date().toISOString()
@@ -55,7 +55,7 @@ const MOCK_PRODUCTS = [
     id: "mock_6", name: "Continental PremiumContact 6 205/60 R15",
     price: 65000,
     department: "Tyres", category: "Mid-Range Tyres", brand: "Continental",
-    images: ["https://images.unsplash.com/photo-1594536750974-1a85c3a8b8fa?auto=format&fit=crop&q=80&w=400"],
+    images: ["https://images.unsplash.com/photo-1571992201485-b3a70ac3ca52?auto=format&fit=crop&q=80&w=400"],
     description: "Outstanding performance in wet and dry conditions.",
     rating: 4, reviews: 89, stock: 20, badge: 'new',
     features: ["Wet braking", "Fuel efficient", "Low rolling resistance"], createdAt: new Date().toISOString()
@@ -65,7 +65,7 @@ const MOCK_PRODUCTS = [
     id: "mock_7", name: "Bosch S4 Car Battery 12V 60Ah",
     price: 45000,
     department: "Batteries", category: "Maintenance-Free", brand: "Bosch",
-    images: ["https://m.media-amazon.com/images/I/71Q2Uj+mRcL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1620387556779-c5cce42f9b8c?auto=format&fit=crop&q=80&w=400"],
     description: "Dependable starting power for all weather conditions.",
     rating: 5, reviews: 172, stock: 8,
     features: ["Maintenance-free", "12V 60Ah", "High CCA"], createdAt: new Date().toISOString()
@@ -74,7 +74,7 @@ const MOCK_PRODUCTS = [
     id: "mock_8", name: "Exide 12V 75Ah Heavy Duty Battery",
     price: 38500,
     department: "Batteries", category: "Maintenance-Free", brand: "Exide",
-    images: ["https://m.media-amazon.com/images/I/61DqNOPLyQL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1609867025575-c5e16c2df7e1?auto=format&fit=crop&q=80&w=400"],
     description: "High power reserve for modern vehicles with many electronics.",
     rating: 4, reviews: 55, stock: 14,
     features: ["75Ah", "5-year warranty", "Spill-proof"], createdAt: new Date().toISOString()
@@ -93,7 +93,7 @@ const MOCK_PRODUCTS = [
     id: "mock_10", name: "ATE Brake Disc Rotor (Front Pair)",
     price: 32000, originalPrice: 38000,
     department: "Brake Systems", category: "Brake Discs", brand: "ATE",
-    images: ["https://m.media-amazon.com/images/I/61f0J3BHIOL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&fit=crop&q=80&w=400"],
     description: "OEM-quality ventilated brake discs for reliable stopping power.",
     rating: 4, reviews: 78, stock: 10, badge: 'sale',
     features: ["Ventilated", "OEM spec", "Anti-rust coating"], createdAt: new Date().toISOString()
@@ -103,7 +103,7 @@ const MOCK_PRODUCTS = [
     id: "mock_11", name: "NGK Iridium IX Spark Plugs (Set of 4)",
     price: 18000,
     department: "Engine Parts", category: "Spark Plugs", brand: "NGK",
-    images: ["https://m.media-amazon.com/images/I/71G+a6Xn8XL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=400"],
     description: "Iridium IX offers extreme ignitability and longer life.",
     rating: 5, reviews: 311, stock: 40, badge: 'hot',
     features: ["Iridium tip", "Anti-corrosion", "Better fuel efficiency"], createdAt: new Date().toISOString()
@@ -112,7 +112,7 @@ const MOCK_PRODUCTS = [
     id: "mock_12", name: "Gates Timing Belt Kit (OEM Match)",
     price: 28000,
     department: "Engine Parts", category: "Timing Belts", brand: "Gates",
-    images: ["https://m.media-amazon.com/images/I/71l5LfH+mEL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1591792111137-5b8219d5fad6?auto=format&fit=crop&q=80&w=400"],
     description: "Complete OEM-match timing belt kit for reliable engine timing.",
     rating: 4, reviews: 45, stock: 7, badge: 'new',
     features: ["OEM match", "High tensile", "Heat resistant"], createdAt: new Date().toISOString()
@@ -122,7 +122,7 @@ const MOCK_PRODUCTS = [
     id: "mock_13", name: "K&N High Performance Washable Air Filter",
     price: 12500,
     department: "Filters", category: "Air Filters", brand: "K&N",
-    images: ["https://m.media-amazon.com/images/I/71X0qR-Q+kL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1636103573498-c7e96940c7fc?auto=format&fit=crop&q=80&w=400"],
     description: "Washable, reusable High-Flow Air Filter for improved performance.",
     rating: 4, reviews: 188, stock: 30,
     features: ["Washable", "High flow", "Reusable"], createdAt: new Date().toISOString()
@@ -131,7 +131,7 @@ const MOCK_PRODUCTS = [
     id: "mock_14", name: "Bosch Oil Filter (For Toyota/Honda)",
     price: 3500,
     department: "Filters", category: "Oil Filters", brand: "Bosch",
-    images: ["https://m.media-amazon.com/images/I/61s9Kl7i9kL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1587614382346-4ec70e388b28?auto=format&fit=crop&q=80&w=400"],
     description: "Premium media oil filter for reliable filtration.",
     rating: 5, reviews: 241, stock: 60,
     features: ["99% filtration", "Anti-drain valve", "Easy fit"], createdAt: new Date().toISOString()
@@ -141,7 +141,7 @@ const MOCK_PRODUCTS = [
     id: "mock_15", name: "Monroe Gas-Matic Shock Absorber (Front)",
     price: 22000,
     department: "Suspension", category: "Shock Absorbers", brand: "Monroe",
-    images: ["https://m.media-amazon.com/images/I/51S7N5t0msL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=400"],
     description: "Gas-pressurized shock absorber for improved handling and comfort.",
     rating: 4, reviews: 93, stock: 16,
     features: ["Gas pressurized", "OEM fit", "Extended life"], createdAt: new Date().toISOString()
@@ -150,7 +150,7 @@ const MOCK_PRODUCTS = [
     id: "mock_16", name: "Kayaba Excel-G Strut Assembly (Rear)",
     price: 35000, originalPrice: 42000,
     department: "Suspension", category: "Struts", brand: "Kayaba",
-    images: ["https://m.media-amazon.com/images/I/61tBtBtRtYL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=400"],
     description: "Complete strut assembly for easy installation and OEM ride quality.",
     rating: 5, reviews: 61, stock: 5, badge: 'sale',
     features: ["Complete assembly", "OEM quality", "Easy install"], createdAt: new Date().toISOString()
@@ -160,7 +160,7 @@ const MOCK_PRODUCTS = [
     id: "mock_17", name: "Denso Alternator 12V 90A (Universal Fit)",
     price: 55000,
     department: "Electrical", category: "Alternators", brand: "Denso",
-    images: ["https://m.media-amazon.com/images/I/61p3-c15l0L._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=400"],
     description: "High-output alternator for reliable charging performance.",
     rating: 4, reviews: 37, stock: 6, badge: 'new',
     features: ["90A output", "Universal fit", "OEM quality"], createdAt: new Date().toISOString()
@@ -169,7 +169,7 @@ const MOCK_PRODUCTS = [
     id: "mock_18", name: "Bosch Starter Motor (Toyota Corolla/Camry)",
     price: 48000,
     department: "Electrical", category: "Starter Motors", brand: "Bosch",
-    images: ["https://m.media-amazon.com/images/I/61Lz6VfxIEL._AC_SX679_.jpg"],
+    images: ["https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=400"],
     description: "Reliable OEM-spec starter motor for effortless engine starting.",
     rating: 5, reviews: 29, stock: 4,
     features: ["OEM spec", "High torque", "All weather"], createdAt: new Date().toISOString()
@@ -196,7 +196,6 @@ export const getProducts = async () => {
 // Fetch single product by ID
 export const getProduct = async (id) => {
   try {
-    // Check mock first
     const mockProduct = MOCK_PRODUCTS.find(p => p.id === id);
     if (mockProduct) return mockProduct;
 
@@ -217,7 +216,6 @@ export const getProduct = async (id) => {
 // Add a new product (Admin only)
 export const addProduct = async (productData) => {
   try {
-    // Basic defaults if needed
     const data = {
       ...productData,
       createdAt: new Date().toISOString(),
