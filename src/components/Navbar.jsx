@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, Menu, X, Search, ChevronDown, User, LogIn } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useModal } from '../context/ModalContext';
+import { useApp } from '../context/AppContext';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -11,6 +12,7 @@ export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const { openCart } = useModal();
+  const { cartCount } = useApp();
   const location = useLocation();
 
   useEffect(() => {
@@ -125,7 +127,7 @@ export default function Navbar() {
           {/* Cart */}
           <button className="icon-btn cart-btn" aria-label="Cart" onClick={openCart}>
             <ShoppingCart size={22} />
-            <span className="cart-badge">0</span>
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </button>
 
           {/* Auth Buttons – Desktop only */}

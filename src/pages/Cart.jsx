@@ -15,7 +15,7 @@ export default function Cart() {
   return (
     <main className="main-content" style={{ padding: '28px 16px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 800, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 800, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
           <ShoppingCart size={24} color="var(--primary)" /> Shopping Cart
           <span style={{ fontSize: '15px', color: 'var(--gray-1)', fontWeight: 400 }}>({items.length} items)</span>
         </h1>
@@ -24,9 +24,9 @@ export default function Cart() {
           <div style={{ textAlign: 'center', padding: '60px 20px', background: 'var(--dark-card)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-lg)' }}>
             <ShoppingCart size={72} color="var(--gray-2)" strokeWidth={1} style={{ margin: '0 auto 20px' }} />
             <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '8px' }}>Your cart is empty</h2>
-            <p style={{ color: 'var(--gray-1)', marginBottom: '24px' }}>Add some products to get started!</p>
-            <Link to="/shop" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--primary)', color: 'var(--black)', padding: '14px 28px', borderRadius: 'var(--radius-md)', fontWeight: 800 }}>
-              Start Shopping <ArrowRight size={18} />
+            <p style={{ color: 'var(--gray-1)', marginBottom: '24px' }}>Browse our car parts and add items to get started!</p>
+            <Link to="/parts" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--primary)', color: '#fff', padding: '14px 28px', borderRadius: 'var(--radius-md)', fontWeight: 800, textDecoration: 'none' }}>
+              Shop Parts <ArrowRight size={18} />
             </Link>
           </div>
         ) : (
