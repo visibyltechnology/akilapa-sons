@@ -6,13 +6,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCx0t1uGNSQ1hsb7CJ-nFGFzXqnfeDWtVk",
-  authDomain: "the-electric-plug.firebaseapp.com",
-  projectId: "the-electric-plug",
-  storageBucket: "the-electric-plug.firebasestorage.app",
-  messagingSenderId: "184874142487",
-  appId: "1:184874142487:web:114c0bcada902d354b0552",
-  measurementId: "G-GHRWCY5ZLS"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 // Initialize Firebase

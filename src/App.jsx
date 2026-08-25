@@ -1,49 +1,118 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Layout
 import AppLayout from './components/AppLayout';
-import Home from './pages/Home';
-import AdminDashboard from './pages/AdminDashboard';
+
+// Contexts
+import { AppProvider } from './context/AppContext';
 import { ModalProvider } from './context/ModalContext';
 import { SubscriptionProvider } from './context/SubscriptionContext';
+
+// Public Pages
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
+import VerifyOTP from './pages/VerifyOTP';
+import Shop from './pages/Shop';
+import ProductDetails from './pages/ProductDetails';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Wishlist from './pages/Wishlist';
+import Profile from './pages/Profile';
+
+// Admin Pages
+import AdminLayout from './pages/admin/AdminLayout';
+import AdminHome from './pages/admin/AdminHome';
+import AdminProducts from './pages/admin/AdminProducts';
+import AdminAddProduct from './pages/admin/AdminAddProduct';
+import AdminOrders from './pages/admin/AdminOrders';
+import AdminUsers from './pages/admin/AdminUsers';
+import AdminCategories from './pages/admin/AdminCategories';
+import AdminBrands from './pages/admin/AdminBrands';
+import AdminLocations from './pages/admin/AdminLocations';
+import AdminSettings from './pages/admin/AdminSettings';
+
+// Subscription Admin
+import AdminDashboard from './pages/AdminDashboard';
 import './pages/AdminDashboard.css';
 
-// Placeholder for missing pages to prevent build errors
+// Simple placeholder for genuinely missing pages
 const Placeholder = ({ title }) => (
   <div className="container section-padding text-center">
     <h1>{title}</h1>
-    <p>This page is under construction.</p>
+    <p style={{ color: 'var(--text-muted)' }}>This page is coming soon.</p>
   </div>
 );
 
 export default function App() {
   return (
-    <SubscriptionProvider>
-      <ModalProvider>
-        <Router>
-          <Routes>
-            {/* Admin route — outside of AppLayout to have clean full-page layout */}
-            <Route path="/admin" element={<AdminDashboard />} />
+    <AppProvider>
+      <SubscriptionProvider>
+        <ModalProvider>
+          <Router>
+            <Routes>
 
-            {/* All public routes inside AppLayout */}
-            <Route path="*" element={
-              <AppLayout>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/parts" element={<Placeholder title="Car Parts" />} />
-                  <Route path="/parts/:category" element={<Placeholder title="Parts Category" />} />
-                  <Route path="/services" element={<Placeholder title="Our Services" />} />
-                  <Route path="/services/:type" element={<Placeholder title="Service Detail" />} />
-                  <Route path="/diagnostics" element={<Placeholder title="Auto Diagnostics" />} />
-                  <Route path="/contact" element={<Placeholder title="Contact Us" />} />
-                  <Route path="/login" element={<Placeholder title="Log In" />} />
-                  <Route path="/signup" element={<Placeholder title="Sign Up" />} />
-                  <Route path="*" element={<Placeholder title="404 Not Found" />} />
-                </Routes>
-              </AppLayout>
-            } />
-          </Routes>
-        </Router>
-      </ModalProvider>
-    </SubscriptionProvider>
+              {/* ── Admin Routes (standalone layout) ── */}
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminHome />} />
+                <Route path="products" element={<AdminProducts />} />
+                <Route path="products/add" element={<AdminAddProduct />} />
+                <Route path="orders" element={<AdminOrders />} />
+                <Route path="users" element={<AdminUsers />} />
+                <Route path="categories" element={<AdminCategories />} />
+                <Route path="brands" element={<AdminBrands />} />
+                <Route path="locations" element={<AdminLocations />} />
+                <Route path="settings" element={<AdminSettings />} />
+                <Route path="subscriptions" element={<AdminDashboard />} />
+              </Route>
+
+              {/* ── All Public Routes inside AppLayout ── */}
+              <Route path="*" element={
+                <AppLayout>
+                  <Routes>
+                    {/* Home */}
+                    <Route path="/" element={<Home />} />
+
+                    {/* Shop / Parts */}
+                    <Route path="/parts" element={<Shop />} />
+                    <Route path="/parts/:category" element={<Shop />} />
+                    <Route path="/shop" element={<Shop />} />
+                    <Route path="/product/:id" element={<ProductDetails />} />
+
+                    {/* Services & Diagnostics */}
+                    <Route path="/services" element={<Placeholder title="Our Services" />} />
+                    <Route path="/diagnostics" element={<Placeholder title="Auto Diagnostics" />} />
+
+                    {/* Cart & Checkout */}
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/wishlist" element={<Wishlist />} />
+
+                    {/* Auth */}
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Register />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/forgot-password" element={<ForgotPassword />} />
+                    <Route path="/verify-otp" element={<VerifyOTP />} />
+
+                    {/* User */}
+                    <Route path="/profile" element={<Profile />} />
+
+                    {/* Contact */}
+                    <Route path="/contact" element={<Placeholder title="Contact Us" />} />
+
+                    {/* Fallback */}
+                    <Route path="*" element={<Placeholder title="404 – Page Not Found" />} />
+                  </Routes>
+                </AppLayout>
+              } />
+
+            </Routes>
+          </Router>
+        </ModalProvider>
+      </SubscriptionProvider>
+    </AppProvider>
   );
 }

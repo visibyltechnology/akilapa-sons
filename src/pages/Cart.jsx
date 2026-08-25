@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Trash2, Plus, Minus, ArrowRight, Tag, Truck, ShieldCheck } from 'lucide-react';
-import { formatCurrency } from './Home';
+import { formatCurrency } from '../utils/helpers';
 import { useApp } from '../context/AppContext';
 
 export default function Cart() {

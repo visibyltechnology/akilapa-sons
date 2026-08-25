@@ -362,7 +362,7 @@ function OrderCard({ order }) {
                   <div style={{ width: '60px', height: '60px', borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--dark-border)' }}>
                     <img src={order.receiptUrl} alt="Receipt Thumbnail" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  <a href={order.receiptUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: '12px', fontWeight: 700, color: 'var(--white)', background: 'var(--primary)', color: 'var(--black)', padding: '6px 12px', borderRadius: '20px', textDecoration: 'none' }}>
+                  <a href={order.receiptUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: '12px', fontWeight: 700, background: 'var(--primary)', color: 'var(--black)', padding: '6px 12px', borderRadius: '20px', textDecoration: 'none' }}>
                     View Full Receipt
                   </a>
                   

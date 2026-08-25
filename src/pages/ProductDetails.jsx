@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getProduct } from '../utils/productService';
-import { getProductIcon, formatCurrency } from './Home';
+import { getProductIcon, formatCurrency } from '../utils/helpers';
 import { categorySpecs } from '../data/taxonomy';
 import { 
   ShoppingCart, Heart, Truck, ShieldCheck, 

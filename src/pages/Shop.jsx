@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import { getProducts } from '../utils/productService';
 import { listenToCategories } from '../utils/catalogService';
-import { ProductCard } from './Home';
+import { ProductCard } from '../components/Products/ProductCard';
 import { categorySpecs } from '../data/taxonomy';
 import { Loader2, SlidersHorizontal, X } from 'lucide-react';
 import SEO from '../components/SEO';
