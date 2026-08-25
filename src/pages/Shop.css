@@ -88,6 +88,34 @@
   gap: 20px;
 }
 
+/* Shop page specific product grid */
+.shop-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.shop-product-grid--list {
+  grid-template-columns: 1fr !important;
+  gap: 16px;
+}
+
+/* 2 columns on tablet */
+@media (max-width: 768px) {
+  .shop-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* 2 columns on mobile — always enforced */
+@media (max-width: 600px) {
+  .shop-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
 /* ── RESPONSIVENESS ── */
 @media (max-width: 900px) {
   .shop-layout {

@@ -376,11 +376,7 @@ export default function Shop() {
             </div>
           </div>
 
-          <div className="product-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: view === 'grid' ? 'repeat(auto-fill, minmax(220px, 1fr))' : '1fr',
-            gap: '24px'
-          }}>
+          <div className={`product-grid shop-product-grid ${view === 'list' ? 'shop-product-grid--list' : ''}`}>
             {loading ? (
               <div style={{ gridColumn: '1 / -1', padding: '60px', textAlign: 'center' }}>
                 <Loader2 className="spinner" size={48} color="var(--primary)" style={{ margin: '0 auto 16px' }} />
