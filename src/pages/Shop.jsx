@@ -195,9 +195,9 @@ export default function Shop() {
           : 'Browse our full collection of genuine car parts, engine oils, batteries, tyres and accessories. Osun State, Nigeria.'}
         url="/parts"
       />
-      <div className="section-header">
-        <h1 className="section-title">Shop <span className="title-accent">Car Parts</span></h1>
-        <div className="text-primary" style={{ fontSize: '13px', fontWeight: 600 }}>Home / Shop{activeCategory ? ` / ${activeCategory}` : ''}</div>
+      <div className="shop-page-header">
+        <h1>Shop <span className="title-accent">Car Parts</span></h1>
+        <div className="shop-breadcrumb">Home / Shop{resolvedCategory ? ` / ${resolvedCategory}` : ''}</div>
       </div>
 
       <div className="shop-layout">

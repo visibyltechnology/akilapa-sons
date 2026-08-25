@@ -4,6 +4,7 @@ import Hero from '../components/Home/Hero';
 import ProductGrid from '../components/Products/ProductGrid';
 import ServiceTabs from '../components/Services/ServiceTabs';
 import VisualDiagnosticTool from '../components/UX/VisualDiagnosticTool';
+import MaintenanceSubscription from '../components/Subscriptions/MaintenanceSubscription';
 
 export default function Home() {
   const [preloaderComplete, setPreloaderComplete] = useState(false);
@@ -18,7 +19,7 @@ export default function Home() {
       <ServiceTabs />
       <VisualDiagnosticTool />
       <ProductGrid />
-      
+      <MaintenanceSubscription />
     </div>
   );
 }
