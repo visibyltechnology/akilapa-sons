@@ -90,7 +90,7 @@ export default function ProductDetails() {
     <main className="main-content" id="main">
       <SEO
         title={`${product.name} - Buy in Nigeria`}
-        description={`Buy ${product.name} in Nigeria at The Electric Plug. ₦${Math.ceil(product.price || 0).toLocaleString('en-NG')}. Fast delivery nationwide. Flexible installment payment available.`}
+        description={`Buy ${product.name} in Osun State, Nigeria at Akilapa & Sons. ₦${Math.ceil(product.price || 0).toLocaleString('en-NG')}. Genuine car parts, fast delivery.`}
         image={product.images?.[0] || product.imgUrl || '/logo.jpeg'}
         url={`/product/${product.id}`}
         type="product"

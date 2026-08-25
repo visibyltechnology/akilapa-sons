@@ -30,7 +30,12 @@ export default function ForgotPassword() {
     <main style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 20px', background: 'radial-gradient(ellipse at top, #1a0a00 0%, var(--black) 60%)' }}>
       <div style={{ width: '100%', maxWidth: '440px' }}>
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <Link to="/"><div style={{ fontFamily: 'var(--font-display)', fontSize: '32px', fontWeight: 900, background: 'linear-gradient(90deg, var(--primary), var(--warning))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>The Electric Plug</div></Link>
+          <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+            <img src="/logo.jpeg" alt="Akilapa & Sons" style={{ width: '54px', height: '54px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--primary)' }} />
+            <div style={{ fontFamily: 'var(--font-heading)', fontSize: '22px', fontWeight: 900, color: 'var(--text-main)', lineHeight: 1.1 }}>
+              Akilapa <span style={{ color: 'var(--primary)' }}>&amp; Sons</span>
+            </div>
+          </Link>
         </div>
 
         <div style={{ background: 'var(--dark-card)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 24px 60px rgba(0,0,0,0.5)' }}>

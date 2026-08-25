@@ -73,10 +73,13 @@ export default function Register() {
       <div style={{ width: '100%', maxWidth: '520px' }}>
 
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <Link to="/">
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: '32px', fontWeight: 900, background: 'linear-gradient(90deg, var(--primary), var(--warning))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>The Electric Plug</div>
+          <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+            <img src="/logo.jpeg" alt="Akilapa & Sons" style={{ width: '54px', height: '54px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--primary)' }} />
+            <div style={{ fontFamily: 'var(--font-heading)', fontSize: '22px', fontWeight: 900, color: 'var(--text-main)', lineHeight: 1.1 }}>
+              Akilapa <span style={{ color: 'var(--primary)' }}>&amp; Sons</span>
+            </div>
           </Link>
-          <p style={{ color: 'var(--gray-1)', fontSize: '14px', marginTop: '6px' }}>Nigeria's Premier Electronics Store</p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginTop: '10px' }}>Premium Car Parts &amp; Auto Services</p>
         </div>
 
         <div style={{ background: 'var(--dark-card)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 24px 60px rgba(0,0,0,0.5)' }}>
@@ -84,7 +87,7 @@ export default function Register() {
             <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '26px', fontWeight: 800, color: 'var(--white)', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <UserPlus size={24} color="var(--primary)" /> Create Account
             </h1>
-            <p style={{ color: 'var(--gray-1)', fontSize: '14px', marginTop: '4px' }}>Join The Electric Plug — Nigeria's Electronics Marketplace</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '14px', marginTop: '4px' }}>Create your Akilapa &amp; Sons account</p>
           </div>
 
           <div style={{ padding: '32px' }}>

@@ -441,7 +441,7 @@ export default function Profile() {
                                             </div>
                                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px' }}>
                                               <span style={{ color: 'var(--gray-1)' }}>Account Name</span>
-                                              <span style={{ fontWeight: 700, color: 'var(--white)' }}>The Electric Plug Enterprises</span>
+                                              <span style={{ fontWeight: 700, color: 'var(--white)' }}>Akilapa &amp; Sons</span>
                                             </div>
                                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px' }}>
                                               <span style={{ color: 'var(--gray-1)' }}>Account Number</span>

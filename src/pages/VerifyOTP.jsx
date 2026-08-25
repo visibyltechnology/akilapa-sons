@@ -100,8 +100,11 @@ export default function VerifyOTP() {
       <div style={{ width: '100%', maxWidth: '440px' }}>
 
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <Link to="/">
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: '32px', fontWeight: 900, background: 'linear-gradient(90deg, var(--primary), var(--warning))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>The Electric Plug</div>
+          <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+            <img src="/logo.jpeg" alt="Akilapa & Sons" style={{ width: '54px', height: '54px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--primary)' }} />
+            <div style={{ fontFamily: 'var(--font-heading)', fontSize: '22px', fontWeight: 900, color: 'var(--text-main)', lineHeight: 1.1 }}>
+              Akilapa <span style={{ color: 'var(--primary)' }}>&amp; Sons</span>
+            </div>
           </Link>
         </div>
 
@@ -122,7 +125,7 @@ export default function VerifyOTP() {
               <div style={{ textAlign: 'center' }}>
                 <ShieldCheck size={64} color="var(--success)" strokeWidth={1.5} style={{ margin: '0 auto 16px' }} />
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 800, color: 'var(--success)', marginBottom: '8px' }}>Email Verified!</h3>
-                <p style={{ color: 'var(--gray-1)', marginBottom: '24px' }}>Your account is ready. Welcome to The Electric Plug!</p>
+                <p style={{ color: 'var(--gray-1)', marginBottom: '24px' }}>Your account is ready. Welcome to Akilapa &amp; Sons!</p>
                 <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--primary)', color: 'var(--black)', padding: '12px 28px', borderRadius: 'var(--radius-md)', fontWeight: 800 }}>Start Shopping <ArrowRight size={16} /></Link>
               </div>
             ) : (

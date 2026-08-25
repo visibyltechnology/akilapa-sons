@@ -73,14 +73,15 @@ export default function AdminLayout() {
           position: 'sticky', top: 0, height: 'calc(100vh - 140px)', overflowY: 'auto'
         }}>
           {/* Logo */}
-          <div style={{ padding: '28px 24px', borderBottom: '1px solid var(--dark-border)' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '16px', background: 'linear-gradient(90deg, var(--primary), var(--warning))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '0.05em' }}>
-              THE ELECTRIC PLUG
+          <div style={{ padding: '24px', borderBottom: '1px solid var(--dark-border)', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <img src="/logo.jpeg" alt="Akilapa & Sons" style={{ width: '44px', height: '44px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--primary)', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: '14px', color: 'var(--text-main)', lineHeight: 1.1 }}>
+                Akilapa <span style={{ color: 'var(--primary)' }}>&amp; Sons</span>
+              </div>
+              <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '3px' }}>Admin Panel</div>
+              <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px', wordBreak: 'break-all' }}>{user.email}</div>
             </div>
-            <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--danger)', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '4px' }}>
-              Admin Panel
-            </div>
-            <div style={{ fontSize: '12px', color: 'var(--gray-2)', marginTop: '8px', wordBreak: 'break-all' }}>{user.email}</div>
           </div>
 
           {/* Nav Links */}

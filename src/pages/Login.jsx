@@ -57,12 +57,13 @@ export default function Login() {
 
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <Link to="/" style={{ display: 'inline-block' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: '32px', fontWeight: 900, background: 'linear-gradient(90deg, var(--primary), var(--warning))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              The Electric Plug
+          <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+            <img src="/logo.jpeg" alt="Akilapa & Sons" style={{ width: '54px', height: '54px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--primary)' }} />
+            <div style={{ fontFamily: 'var(--font-heading)', fontSize: '22px', fontWeight: 900, color: 'var(--text-main)', lineHeight: 1.1 }}>
+              Akilapa <span style={{ color: 'var(--primary)' }}>&amp; Sons</span>
             </div>
           </Link>
-          <p style={{ color: 'var(--gray-1)', fontSize: '14px', marginTop: '6px' }}>Giving Quality You Can Always Trust</p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginTop: '10px' }}>Premium Car Parts &amp; Auto Services</p>
         </div>
 
         {/* Card */}

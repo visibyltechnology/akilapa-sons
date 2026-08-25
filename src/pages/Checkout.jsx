@@ -495,7 +495,7 @@ export default function Checkout() {
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                           <span style={{ color: 'var(--gray-1)', fontSize: '13px' }}>Account Name</span>
-                          <span style={{ fontWeight: 700, fontSize: '14px' }}>The electric plug enterprises</span>
+                          <span style={{ fontWeight: 700, fontSize: '14px' }}>Akilapa &amp; Sons</span>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                           <span style={{ color: 'var(--gray-1)', fontSize: '13px' }}>Account Number</span>
@@ -576,7 +576,7 @@ export default function Checkout() {
 
                       <div>
                         <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--white)', marginBottom: '8px' }}>Upload Initial Deposit Receipt <span style={{ color: 'var(--danger)' }}>*</span></label>
-                        <p style={{ fontSize: '12px', color: 'var(--gray-1)', marginBottom: '12px' }}>Please transfer your deposit of <strong>{formatCurrency(depositAmount)}</strong> to Wema Bank (0125986348) - The electric plug enterprises.</p>
+                        <p style={{ fontSize: '12px', color: 'var(--gray-1)', marginBottom: '12px' }}>Please transfer your deposit of <strong>{formatCurrency(depositAmount)}</strong> to the account above — Akilapa &amp; Sons.</p>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                           <label style={{ flex: 1, background: 'var(--dark-card)', border: '1.5px dashed var(--dark-border)', padding: '16px', borderRadius: 'var(--radius-sm)', textAlign: 'center', cursor: 'pointer', transition: 'var(--transition)' }}>
                             <Upload size={20} color="var(--primary)" style={{ margin: '0 auto 8px' }} />
@@ -707,7 +707,7 @@ export default function Checkout() {
             <div style={{ color: 'var(--gray-1)', fontSize: '14px', lineHeight: 1.6, marginBottom: '32px' }}>
               {activeLegal === 'terms' ? (
                 <>
-                  <p style={{ marginBottom: '16px' }}>By proceeding, you agree to The Electric Plug's terms of service. All purchases are final once delivered and verified in good condition.</p>
+                  <p style={{ marginBottom: '16px' }}>By proceeding, you agree to Akilapa &amp; Sons' terms of service. All purchases are final once delivered and verified in good condition.</p>
                   <h4 style={{ color: 'var(--white)', fontWeight: 700, marginBottom: '8px' }}>No-Return & No-Refund Policy</h4>
                   <p>Please note that we operate a strict No-Return and No-Refund policy. Once an item is purchased and collected/delivered, it cannot be returned for a refund or exchanged unless it is Dead On Arrival (DOA) and verified by our technicians within 24 hours of delivery.</p>
                 </>

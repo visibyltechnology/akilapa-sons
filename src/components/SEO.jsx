@@ -13,19 +13,19 @@ export default function SEO({
   type = 'website',
   product, // optional: pass a product object {name, price, image} for product pages
 }) {
-  const siteName = 'The Electric Plug';
-  const defaultTitle = `${siteName} | Premium Electronics in Nigeria`;
+  const siteName = 'Akilapa & Sons';
+  const defaultTitle = `${siteName} | Premium Car Parts & Auto Services`;
   const defaultDesc =
-    'Shop the latest smartphones, laptops, TVs, gaming consoles, home appliances and more at The Electric Plug. Fast delivery across Nigeria. Flexible installment payment plans.';
+    'Shop genuine car parts, engine oils, batteries, tyres and auto accessories at Akilapa & Sons — Osun State, Nigeria. Expert vehicle diagnostics and fast delivery.';
 
   const resolvedTitle = title ? `${title} | ${siteName}` : defaultTitle;
   const resolvedDesc = description || defaultDesc;
   const resolvedUrl = url
-    ? `https://the-electric-plug.onrender.com${url}`
-    : 'https://the-electric-plug.onrender.com/';
+    ? `https://akilapa-sons.vercel.app${url}`
+    : 'https://akilapa-sons.vercel.app/';
   const resolvedImage = image?.startsWith('http')
     ? image
-    : `https://the-electric-plug.onrender.com${image}`;
+    : `https://akilapa-sons.vercel.app${image}`;
 
   // Build Product structured data if a product object is passed
   const productSchema = product
@@ -34,8 +34,8 @@ export default function SEO({
         '@type': 'Product',
         name: product.name,
         image: [product.image || product.imgUrl],
-        description: product.description || `Buy ${product.name} at The Electric Plug Nigeria`,
-        brand: { '@type': 'Brand', name: product.brand || 'The Electric Plug' },
+        description: product.description || `Buy ${product.name} at Akilapa & Sons Nigeria`,
+        brand: { '@type': 'Brand', name: product.brand || 'Akilapa & Sons' },
         offers: {
           '@type': 'Offer',
           url: resolvedUrl,

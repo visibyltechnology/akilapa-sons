@@ -169,8 +169,8 @@ export default function Shop() {
       <SEO
         title={activeCategory ? `Buy ${activeCategory} in Nigeria` : searchQuery ? `"${searchQuery}" - Electronics Nigeria` : 'Shop All Electronics in Nigeria'}
         description={activeCategory
-          ? `Shop ${activeCategory} online in Nigeria at The Electric Plug. Best prices, fast delivery nationwide, flexible installment plans.`
-          : 'Browse our full collection of smartphones, laptops, TVs, gaming consoles, home appliances and more. Fast delivery across Nigeria.'}
+          ? `Shop ${activeCategory} car parts in Nigeria at Akilapa & Sons. Genuine parts, best prices, fast delivery.`
+          : 'Browse our full collection of genuine car parts, engine oils, batteries, tyres and accessories. Osun State, Nigeria.'}
         url="/shop"
       />
       <div className="section-header">

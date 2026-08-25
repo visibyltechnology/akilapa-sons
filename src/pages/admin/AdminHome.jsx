@@ -24,7 +24,7 @@ export default function AdminHome() {
         <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '28px', fontWeight: 900, marginBottom: '6px' }}>
           Welcome back, Admin <span style={{ color: 'var(--primary)' }}>⚡</span>
         </h1>
-        <p style={{ color: 'var(--gray-1)', fontSize: '14px' }}>Manage your Electric Plug storefront from here.</p>
+        <p style={{ color: 'var(--gray-1)', fontSize: '14px' }}>Manage the Akilapa &amp; Sons storefront from here.</p>
       </div>
 
       {/* Stats */}
