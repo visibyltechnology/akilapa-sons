@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import SEO from '../components/SEO';
+import './ProductDetails.css';
 
 export default function ProductDetails() {
   const { addToCart, toggleWishlist, isInWishlist } = useApp();
