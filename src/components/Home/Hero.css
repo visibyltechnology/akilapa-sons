@@ -131,14 +131,68 @@
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
-  
+
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
-  
+
   .hero-ctas {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ── Very small screens (≤480px) ── */
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .hero-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.78rem;
+  }
+
+  .hero-stats {
+    gap: 0.5rem;
+  }
+
+  .stat-card {
+    padding: 0.6rem 0.75rem;
+    min-width: unset;
+    flex: 1;
+  }
+
+  .stat-value {
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
   }
 }

@@ -45,15 +45,15 @@ export default function Hero() {
         <div className="hero-stats">
           <div className="glass-card stat-card">
             <div className="stat-value text-primary">100%</div>
-            <div className="stat-label">Machine Alignment</div>
+            <div className="stat-label">Original Car Parts</div>
           </div>
           <div className="glass-card stat-card">
-            <div className="stat-value text-primary">Original</div>
-            <div className="stat-label">Engine Oils & Filters</div>
+            <div className="stat-value text-primary">500+</div>
+            <div className="stat-label">Car Parts In Stock</div>
           </div>
           <div className="glass-card stat-card">
             <div className="stat-value text-primary">24/7</div>
-            <div className="stat-label">Expert Support</div>
+            <div className="stat-label">Parts & Service Support</div>
           </div>
         </div>
       </div>
