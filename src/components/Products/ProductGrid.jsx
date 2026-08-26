@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { getProducts } from '../../utils/productService';
+import { getProducts, MOCK_PRODUCTS } from '../../utils/productService';
 import { ProductCard } from './ProductCard';
 import './ProductGrid.css';
 
@@ -35,14 +35,12 @@ export const ScrollableProductSlider = ({ products }) => {
 };
 
 export default function ProductGrid() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(MOCK_PRODUCTS);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const dbProducts = await getProducts();
-      setProducts(dbProducts || []);
-    };
-    fetchProducts();
+    getProducts().then(dbProducts => {
+      if (dbProducts && dbProducts.length > 0) setProducts(dbProducts);
+    });
   }, []);
 
   return (

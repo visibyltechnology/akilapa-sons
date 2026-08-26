@@ -86,7 +86,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 15 }}
                     transition={{ duration: 0.2 }}
-                    className="mega-menu glass-card"
+                    className="mega-menu"
                   >
                     {link.dropdown.map(dropLink => (
                       <Link key={dropLink.name} to={dropLink.path} className="dropdown-link">
@@ -160,7 +160,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="mobile-menu glass-card"
+            className="mobile-menu"
           >
             <nav className="mobile-nav-links">
               {navLinks.map((link, i) => (

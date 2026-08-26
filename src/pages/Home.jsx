@@ -16,9 +16,9 @@ export default function Home() {
       )}
       
       <Hero />
+      <ProductGrid />
       <ServiceTabs />
       <VisualDiagnosticTool />
-      <ProductGrid />
       <MaintenanceSubscription />
     </div>
   );

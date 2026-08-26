@@ -5,7 +5,7 @@ const PRODUCTS_COLLECTION = 'products';
 
 // Using picsum.photos for guaranteed working placeholder images
 // Each seed gives a consistent unique image per product
-const MOCK_PRODUCTS = [
+export const MOCK_PRODUCTS = [
   // Engine Oils
   {
     id: "mock_1", name: "Castrol Edge 5W-30 Advanced Full Synthetic Engine Oil",
