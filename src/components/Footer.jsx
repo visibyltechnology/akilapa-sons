@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { useModal } from '../context/ModalContext';
@@ -24,11 +24,23 @@ export default function Footer() {
               </div>
               <div className="contact-item">
                 <Phone size={20} className="contact-icon" />
-                <span>0803 564 7729, 0807 784 4998</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                  <span>Mokola: <a href="tel:08154900493" style={{ color: 'inherit' }}>08154900493</a></span>
+                  <span>Iwo Road: <a href="tel:07060704481" style={{ color: 'inherit' }}>07060704481</a></span>
+                  <span>Challenge: <a href="tel:08088924598" style={{ color: 'inherit' }}>08088924598</a></span>
+                </div>
               </div>
               <div className="contact-item">
                 <Mail size={20} className="contact-icon" />
                 <span>info@akilapamultiserviceltd.com</span>
+              </div>
+              <div className="contact-item" style={{ alignItems: 'flex-start' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="contact-icon" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                  <span>Mon-Fri: 9:00am - 6:00pm</span>
+                  <span>Sat: 9:30am - 5:00pm</span>
+                  <span>Sun: Closed</span>
+                </div>
               </div>
             </div>
           </div>
