@@ -32,21 +32,25 @@ export default function Navbar() {
       name: 'Car Parts',
       path: '/parts',
       dropdown: [
+        { name: 'New Tyres & Tubes', path: '/parts/tyres' },
         { name: 'Engine Oils', path: '/parts/oils' },
-        { name: 'Premium Tyres', path: '/parts/tyres' },
-        { name: 'Batteries', path: '/parts/batteries' },
-        { name: 'Brake Systems', path: '/parts/brakes' },
+        { name: 'Original Oil Filters', path: '/parts/filters' },
+        { name: 'Alloy Wheels', path: '/parts/wheels' },
+        { name: 'Leather Foot Mats', path: '/parts/accessories' },
       ]
     },
     {
       name: 'Services',
       path: '/services',
       dropdown: [
-        { name: 'Auto Diagnostics', path: '/diagnostics' },
-        { name: 'Wheel Alignment', path: '/services/alignment' },
-        { name: 'Fluid Replacement', path: '/services/fluids' },
+        { name: 'Vehicle Diagnostics', path: '/diagnostics' },
+        { name: 'Digital Wheel Alignment', path: '/services/alignment' },
+        { name: 'Digital Wheel Balancing', path: '/services/balancing' },
+        { name: 'Tyre Fitting Machine', path: '/services/tyre-fitting' },
+        { name: 'Oil Draining Machine', path: '/services/oil-drain' },
       ]
     },
+    { name: 'Shop', path: '/shop' },
     { name: 'Contact', path: '/contact' }
   ];
 

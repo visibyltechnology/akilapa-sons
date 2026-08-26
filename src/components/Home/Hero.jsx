@@ -24,11 +24,11 @@ export default function Hero() {
       <div className="container hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Premium Car Parts &<br/>
-            <span className="text-primary">Expert Diagnostics</span>
+            Akilapa & Sons<br/>
+            <span className="text-primary">Auto Workshop</span>
           </h1>
           <p className="hero-subtitle">
-            Get 100% original parts, top-tier oils, and precise alignment services for your vehicle in Osun State.
+            Get the best services for your vehicles. All brands of new tyres & tubes, engine oils, digital wheel alignment, diagnosing, and more.
           </p>
           
           <div className="hero-ctas">
