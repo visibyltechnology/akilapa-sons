@@ -6,6 +6,7 @@ import WhatsAppCartDrawer from './UX/WhatsAppCartDrawer';
 import InstantQuoteBuilder from './UX/InstantQuoteBuilder';
 import SubscriptionModal from './Subscriptions/SubscriptionModal';
 import FloatingWidgets from './FloatingWidgets';
+import ScrollToTop from './ScrollToTop';
 import { useModal } from '../context/ModalContext';
 
 export default function AppLayout({ children }) {
@@ -13,6 +14,7 @@ export default function AppLayout({ children }) {
 
   return (
     <ReactLenis root>
+      <ScrollToTop />
       <Navbar />
       <main style={{ minHeight: '100vh', paddingTop: '80px' }}>
         {children}
