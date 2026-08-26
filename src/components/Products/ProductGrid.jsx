@@ -21,7 +21,7 @@ export const ScrollableProductSlider = ({ products }) => {
         <ChevronLeft size={24} color="#000" />
       </button>
       
-      <div className="scrollable-2row" ref={scrollRef}>
+      <div className="scrollable-row" ref={scrollRef}>
         {products?.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -43,19 +43,41 @@ export default function ProductGrid() {
     });
   }, []);
 
+  const tyres = products.filter(p => p.category === 'Tyres');
+  const otherParts = products.filter(p => p.category !== 'Tyres');
+
   return (
     <section className="section-padding product-section">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Premium <span className="text-primary">Parts</span></h2>
-          <p className="section-subtitle">Guaranteed original parts for ultimate performance.</p>
+        
+        {/* Row 1: Tyres */}
+        <div style={{ marginBottom: '3rem' }}>
+          <div className="deal-header">
+            <div className="deal-title-group">
+              <div className="deal-accent"></div>
+              <h2 className="deal-title">Premium Tyres & Tubes</h2>
+              <span className="deal-separator">|</span>
+              <span className="deal-subtitle">Best Performance</span>
+            </div>
+            <Link to="/shop?category=Tyres" className="deal-see-all">See All &gt;</Link>
+          </div>
+          <ScrollableProductSlider products={tyres} />
+        </div>
+
+        {/* Row 2: Other Parts */}
+        <div>
+          <div className="deal-header">
+            <div className="deal-title-group">
+              <div className="deal-accent"></div>
+              <h2 className="deal-title">Essential Car Parts</h2>
+              <span className="deal-separator">|</span>
+              <span className="deal-subtitle">Genuine Spares</span>
+            </div>
+            <Link to="/shop" className="deal-see-all">See All &gt;</Link>
+          </div>
+          <ScrollableProductSlider products={otherParts} />
         </div>
         
-        <ScrollableProductSlider products={products} />
-        
-        <div className="text-center" style={{ marginTop: '3rem' }}>
-          <Link to="/shop" className="btn-outline">View All Parts</Link>
-        </div>
       </div>
     </section>
   );
