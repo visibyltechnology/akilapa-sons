@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { useModal } from '../context/ModalContext';
@@ -20,19 +20,21 @@ export default function Footer() {
             <div className="contact-info">
               <div className="contact-item">
                 <MapPin size={20} className="contact-icon" />
-                <span>No 59, Opposite Government Secretariat Abere, Osun State.</span>
+                <span>No 59, Opposite Government Secretariat, Abeere, Osun State.</span>
               </div>
               <div className="contact-item">
                 <Phone size={20} className="contact-icon" />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
-                  <span>Mokola: <a href="tel:08154900493" style={{ color: 'inherit' }}>08154900493</a></span>
-                  <span>Iwo Road: <a href="tel:07060704481" style={{ color: 'inherit' }}>07060704481</a></span>
-                  <span>Challenge: <a href="tel:08088924598" style={{ color: 'inherit' }}>08088924598</a></span>
+                  <a href="tel:08035647729" style={{ color: 'inherit' }}>08035647729</a>
+                  <a href="tel:08077844998" style={{ color: 'inherit' }}>08077844998</a>
                 </div>
               </div>
               <div className="contact-item">
                 <Mail size={20} className="contact-icon" />
-                <span>info@akilapamultiserviceltd.com</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                  <a href="mailto:info@akilapamultiserviceltd.com" style={{ color: 'inherit' }}>info@akilapamultiserviceltd.com</a>
+                  <a href="mailto:olusayoakilapa@gmail.com" style={{ color: 'inherit' }}>olusayoakilapa@gmail.com</a>
+                </div>
               </div>
               <div className="contact-item" style={{ alignItems: 'flex-start' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="contact-icon" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>

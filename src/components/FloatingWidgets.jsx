@@ -24,8 +24,8 @@ export default function FloatingWidgets() {
     });
   };
 
-  const whatsappNumber = "2349032272294"; // Replaced with actual number (formatted with country code for WA link)
-  const whatsappMessage = "Hello! I'm interested in your products.";
+  const whatsappNumber = "2348035647729";
+  const whatsappMessage = "Hello! I'd like to enquire about your car parts and services.";
 
   return (
     <div className="floating-widgets">

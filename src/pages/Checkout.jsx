@@ -611,40 +611,32 @@ export default function Checkout() {
                   )}
 
                   {/* Terms Checkboxes */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '24px', marginBottom: '16px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '24px', marginBottom: '16px' }}>
                     {/* Terms */}
-                    <div onClick={() => !termsAccepted.terms && setActiveLegal('terms')} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '16px', borderRadius: 'var(--radius-md)', border: termsAccepted.terms ? '2px solid rgba(0,230,118,0.3)' : '2px solid var(--dark-border)', background: termsAccepted.terms ? 'rgba(0,230,118,0.05)' : 'var(--dark-card)', cursor: termsAccepted.terms ? 'default' : 'pointer', transition: 'var(--transition)' }}>
-                      <div style={{ flexShrink: 0, marginTop: '2px', width: '20px', height: '20px', borderRadius: '4px', border: termsAccepted.terms ? '2px solid var(--success)' : '2px solid var(--gray-2)', background: termsAccepted.terms ? 'var(--success)' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer' }}>
+                      <div
+                        onClick={() => setTermsAccepted(prev => ({ ...prev, terms: !prev.terms }))}
+                        style={{ flexShrink: 0, marginTop: '2px', width: '20px', height: '20px', borderRadius: '4px', border: termsAccepted.terms ? '2px solid var(--success)' : '2px solid var(--gray-2)', background: termsAccepted.terms ? 'var(--success)' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'var(--transition)' }}
+                      >
                         {termsAccepted.terms && <CheckCircle size={14} color="var(--black)" strokeWidth={3} />}
                       </div>
-                      <div style={{ flex: 1 }}>
-                        <p style={{ fontSize: '13px', fontWeight: 700, color: termsAccepted.terms ? 'var(--success)' : 'var(--white)', margin: 0, lineHeight: 1.5 }}>
-                          I have read and accept the <span style={{ color: 'var(--primary)', cursor: 'pointer', textDecoration: 'underline' }} onClick={e => { e.stopPropagation(); setActiveLegal('terms'); }}>Terms & Conditions</span> including the No-Return & No-Refund policy.
-                        </p>
-                        {termsAccepted.terms ? (
-                          <p style={{ fontSize: '11px', color: 'var(--success)', marginTop: '4px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>✓ Accepted</p>
-                        ) : (
-                          <p style={{ fontSize: '11px', color: 'var(--gray-2)', marginTop: '4px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Click to read & accept</p>
-                        )}
-                      </div>
-                    </div>
+                      <span style={{ fontSize: '13px', color: termsAccepted.terms ? 'var(--success)' : 'var(--gray-1)', lineHeight: 1.5 }}>
+                        I accept the <strong style={{ color: 'var(--white)' }}>Terms & Conditions</strong> including the No-Return & No-Refund policy.
+                      </span>
+                    </label>
 
                     {/* Privacy */}
-                    <div onClick={() => !termsAccepted.privacy && setActiveLegal('privacy')} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '16px', borderRadius: 'var(--radius-md)', border: termsAccepted.privacy ? '2px solid rgba(0,230,118,0.3)' : '2px solid var(--dark-border)', background: termsAccepted.privacy ? 'rgba(0,230,118,0.05)' : 'var(--dark-card)', cursor: termsAccepted.privacy ? 'default' : 'pointer', transition: 'var(--transition)' }}>
-                      <div style={{ flexShrink: 0, marginTop: '2px', width: '20px', height: '20px', borderRadius: '4px', border: termsAccepted.privacy ? '2px solid var(--success)' : '2px solid var(--gray-2)', background: termsAccepted.privacy ? 'var(--success)' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer' }}>
+                      <div
+                        onClick={() => setTermsAccepted(prev => ({ ...prev, privacy: !prev.privacy }))}
+                        style={{ flexShrink: 0, marginTop: '2px', width: '20px', height: '20px', borderRadius: '4px', border: termsAccepted.privacy ? '2px solid var(--success)' : '2px solid var(--gray-2)', background: termsAccepted.privacy ? 'var(--success)' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'var(--transition)' }}
+                      >
                         {termsAccepted.privacy && <CheckCircle size={14} color="var(--black)" strokeWidth={3} />}
                       </div>
-                      <div style={{ flex: 1 }}>
-                        <p style={{ fontSize: '13px', fontWeight: 700, color: termsAccepted.privacy ? 'var(--success)' : 'var(--white)', margin: 0, lineHeight: 1.5 }}>
-                          I have read and accept the <span style={{ color: 'var(--primary)', cursor: 'pointer', textDecoration: 'underline' }} onClick={e => { e.stopPropagation(); setActiveLegal('privacy'); }}>Privacy Policy</span> and consent to data processing under Nigerian NDPR.
-                        </p>
-                        {termsAccepted.privacy ? (
-                          <p style={{ fontSize: '11px', color: 'var(--success)', marginTop: '4px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>✓ Accepted</p>
-                        ) : (
-                          <p style={{ fontSize: '11px', color: 'var(--gray-2)', marginTop: '4px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Click to read & accept</p>
-                        )}
-                      </div>
-                    </div>
+                      <span style={{ fontSize: '13px', color: termsAccepted.privacy ? 'var(--success)' : 'var(--gray-1)', lineHeight: 1.5 }}>
+                        I accept the <strong style={{ color: 'var(--white)' }}>Privacy Policy</strong> and consent to data processing under Nigerian NDPR.
+                      </span>
+                    </label>
                   </div>
 
                   {error && (

@@ -28,7 +28,7 @@ export default function Hero() {
             <span className="text-primary">Auto Workshop</span>
           </h1>
           <p className="hero-subtitle">
-            Get the best services for your vehicles. All brands of new tyres & tubes, engine oils, digital wheel alignment, diagnosing, and more.
+            Specialists in new tyres & tubes, alloy wheels, leather foot mats, all brands of engine oils, and original oil filters. Serving Osun State with professional vehicle care.
           </p>
           
           <div className="hero-ctas">
