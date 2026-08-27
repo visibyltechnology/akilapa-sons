@@ -135,3 +135,20 @@
     gap: 2.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .subscribe-form {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .subscribe-form input {
+    width: 100%;
+  }
+  .subscribe-form button {
+    width: 100%;
+  }
+  .contact-item {
+    word-break: break-word;
+    font-size: 0.95rem;
+  }
+}

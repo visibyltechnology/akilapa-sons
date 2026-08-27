@@ -100,7 +100,15 @@ img {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 
 /* Glassmorphic Card */
@@ -180,6 +188,31 @@ img {
 .gap-6 { gap: 1.5rem; }
 .gap-8 { gap: 2rem; }
 
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .responsive-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Responsive Base */
 @media (max-width: 1024px) {
   .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
@@ -194,7 +227,12 @@ img {
   }
 
   .container {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
+  }
+  
+  .main-content {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
   
   h1 { font-size: 2rem; }
@@ -205,6 +243,15 @@ img {
 @media (max-width: 480px) {
   .section-padding { padding: 2rem 0; }
   h1 { font-size: 1.75rem; }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .main-content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 /* Preloader */

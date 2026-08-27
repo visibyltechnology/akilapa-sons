@@ -7,6 +7,7 @@ import { formatCurrency } from '../utils/helpers';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { uploadImage } from '../utils/cloudinaryService';
+import './Cart.css';
 
 const steps = ['Delivery', 'Payment', 'Review'];
 
@@ -405,7 +406,7 @@ export default function Checkout() {
             ))}
           </div>
 
-          <div className="cart-grid" style={{ gridTemplateColumns: '1fr 360px', alignItems: 'start' }}>
+          <div className="cart-grid">
             {/* Steps Content */}
             <div style={{ background: 'var(--dark-card)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-lg)', padding: '32px' }}>
               {step === 0 && (
@@ -438,12 +439,12 @@ export default function Checkout() {
                     { id: 'klump_bnpl', label: 'Klump BNPL', icon: ShieldCheck, desc: 'Buy Now, Pay Later with Klump', disabled: false },
                     ...(user?.isAdmin ? [{ id: 'admin_cash', label: 'Admin POS / Cash', icon: Zap, desc: 'Direct order placement (Admin only)' }] : []),
                   ].map(method => (
-                    <div 
-                      key={method.id} 
-                      onClick={() => !method.disabled && setFormData(p => ({ ...p, payMethod: method.id }))} 
-                      style={{ 
-                        display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', 
-                        border: `2px solid ${formData.payMethod === method.id ? 'var(--primary)' : 'var(--dark-border)'}`, 
+                      <div 
+                        key={method.id} 
+                        onClick={() => !method.disabled && setFormData(p => ({ ...p, payMethod: method.id }))} 
+                        style={{ 
+                          display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 14px', 
+                          border: `2px solid ${formData.payMethod === method.id ? 'var(--primary)' : 'var(--dark-border)'}`, 
                         borderRadius: 'var(--radius-md)', 
                         cursor: method.disabled ? 'not-allowed' : 'pointer', 
                         background: formData.payMethod === method.id ? 'rgba(255,206,30,0.05)' : 'var(--dark)', 

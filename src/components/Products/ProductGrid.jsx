@@ -43,8 +43,8 @@ export default function ProductGrid() {
     });
   }, []);
 
-  const tyres = products.filter(p => p.category === 'Tyres');
-  const otherParts = products.filter(p => p.category !== 'Tyres');
+  const tyres = products.filter(p => p.department === 'Tyres');
+  const otherParts = products.filter(p => p.department !== 'Tyres');
 
   return (
     <section className="section-padding product-section">

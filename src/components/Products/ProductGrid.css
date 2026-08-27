@@ -297,8 +297,8 @@
 
 @media (max-width: 768px) {
   .scrollable-row {
-    grid-auto-columns: 150px; /* Small size matching user image */
-    gap: 12px;
+    grid-auto-columns: 115px; /* Smaller size to show >2.25 cards */
+    gap: 8px;
   }
   .slider-btn {
     display: none;
@@ -326,26 +326,26 @@
   
   /* Compact cards */
   .product-img-wrap {
-    height: 140px;
+    height: 110px;
   }
   .product-info {
-    padding: 10px;
+    padding: 8px;
   }
   .product-brand {
-    font-size: 9px;
+    font-size: 8px;
   }
   .product-name {
-    font-size: 12px;
-    margin-bottom: 6px;
+    font-size: 11px;
+    margin-bottom: 4px;
   }
   .product-price {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--primary); /* Matching image yellow/primary */
   }
   .product-old-price {
-    font-size: 11px;
+    font-size: 10px;
   }
   .rating-count {
-    font-size: 10px;
+    font-size: 9px;
   }
 }
