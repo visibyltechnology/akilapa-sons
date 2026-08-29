@@ -16,7 +16,7 @@ export default function Cart() {
   return (
     <main className="main-content" style={{ padding: '28px 16px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 800, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 800, marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
           <ShoppingCart size={24} color="var(--primary)" /> Shopping Cart
           <span style={{ fontSize: '15px', color: 'var(--gray-1)', fontWeight: 400 }}>({items.length} items)</span>
         </h1>
@@ -52,7 +52,7 @@ export default function Cart() {
                     <Link to={`/product/${item.id}`} className="item-name" style={{ color: 'var(--white)', marginBottom: '10px' }}>{item.name}</Link>
 
                     {/* Qty + Remove row */}
-                    <div className="cart-row-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '8px' }}>
+                    <div className="cart-row-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '8px', flexWrap: 'wrap' }}>
                       <div style={{ display: 'flex', alignItems: 'center', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-sm)', overflow: 'hidden' }}>
                         <button onClick={() => updateQty(item.id, -1)} style={{ width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--dark)', color: 'var(--white)', border: 'none', cursor: 'pointer' }}>
                           <Minus size={13} />
@@ -82,11 +82,11 @@ export default function Cart() {
               <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 800, marginBottom: '20px', paddingBottom: '16px', borderBottom: '1px solid var(--dark-border)' }}>Order Summary</h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', color: 'var(--gray-1)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', color: 'var(--gray-1)', flexWrap: 'wrap', gap: '4px' }}>
                   <span>Subtotal ({items.length} items)</span>
                   <span style={{ color: 'var(--white)', fontWeight: 600 }}>{formatCurrency(subtotal)}</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', color: 'var(--gray-1)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', color: 'var(--gray-1)', flexWrap: 'wrap', gap: '4px' }}>
                   <span>Delivery</span>
                   <span style={{ color: shipping === 0 ? 'var(--success)' : 'var(--white)', fontWeight: 600 }}>{shipping === 0 ? 'FREE' : formatCurrency(shipping)}</span>
                 </div>
@@ -109,7 +109,7 @@ export default function Cart() {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0', borderTop: '1px solid var(--dark-border)', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0', borderTop: '1px solid var(--dark-border)', marginBottom: '20px', flexWrap: 'wrap', gap: '8px' }}>
                 <span style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 800 }}>Total</span>
                 <span style={{ fontFamily: 'var(--font-heading)', fontSize: '22px', fontWeight: 900, color: 'var(--primary)' }}>{formatCurrency(total)}</span>
               </div>
@@ -118,7 +118,7 @@ export default function Cart() {
                 Proceed to Checkout <ArrowRight size={18} />
               </Link>
 
-              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: 'var(--gray-2)' }}><ShieldCheck size={12} color="var(--success)" /> Secure</span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: 'var(--gray-2)' }}><Truck size={12} color="var(--info)" /> Fast Delivery</span>
               </div>

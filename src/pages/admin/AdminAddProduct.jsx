@@ -43,7 +43,7 @@ export default function AdminAddProduct() {
     name: '', department: '', category: '', subcategory: '', brand: '', description: '',
     overview: '', colors: [], features: [],
     price: '', originalPrice: '', badge: '', stock: 0,
-    unlimited_stock: false, is_hidden: false, featured: false, featuredPosition: ''
+    unlimited_stock: false, is_hidden: false, featured: false, featuredPosition: '', featuredSection: ''
   });
   const [colorInput, setColorInput] = useState('');
   const [featureInput, setFeatureInput] = useState('');
@@ -58,6 +58,7 @@ export default function AdminAddProduct() {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [showFeaturedModal, setShowFeaturedModal] = useState(false);
   const [positionInput, setPositionInput] = useState('');
+  const [sectionInput, setSectionInput] = useState('Essential Car Parts');
   const [categories, setCategories] = useState([]);
   const [brands, setBrands] = useState([]);
 
@@ -85,7 +86,10 @@ export default function AdminAddProduct() {
           } else if (data.image || data.imgUrl || data.img) {
             setImagePreviews([data.image || data.imgUrl || data.img]);
           }
-          if (data.featured) setPositionInput(String(data.featuredPosition || ''));
+          if (data.featured) {
+            setPositionInput(String(data.featuredPosition || ''));
+            setSectionInput(data.featuredSection || 'Essential Car Parts');
+          }
         } else {
           setError('Product not found.');
         }
@@ -177,15 +181,16 @@ export default function AdminAddProduct() {
   const handleFeaturedToggle = () => {
     if (!formData.featured) {
       setPositionInput(String(featuredProducts.length + 1));
+      setSectionInput(formData.department === 'Tyres' ? 'Premium Tyres & Tubes' : 'Essential Car Parts');
       setShowFeaturedModal(true);
     } else {
-      setFormData(p => ({ ...p, featured: false, featuredPosition: '' }));
+      setFormData(p => ({ ...p, featured: false, featuredPosition: '', featuredSection: '' }));
     }
   };
 
   const handleSetFeaturedPosition = () => {
     if (!positionInput || isNaN(positionInput)) { showToast('Please enter a valid position.', 'error'); return; }
-    setFormData(p => ({ ...p, featured: true, featuredPosition: positionInput }));
+    setFormData(p => ({ ...p, featured: true, featuredPosition: positionInput, featuredSection: sectionInput }));
     setShowFeaturedModal(false);
   };
 
@@ -299,6 +304,7 @@ export default function AdminAddProduct() {
         is_hidden: formData.is_hidden,
         featured: formData.featured,
         featuredPosition: formData.featured ? (Number(positionInput) || 0) : null,
+        featuredSection: formData.featured ? formData.featuredSection : null,
         images: imageUrls,
         image: imageUrls[0] || '', imgUrl: imageUrls[0] || '',
         rating: formData.rating || 5,
@@ -736,14 +742,23 @@ export default function AdminAddProduct() {
         {showFeaturedModal && (
           <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(4px)' }}>
             <div style={{ background: 'var(--dark-card)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-md)', padding: '28px', maxWidth: '380px', width: '90%', boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}>
-              <h2 style={{ margin: '0 0 10px', fontSize: '18px', fontWeight: 800 }}>Set Featured Position</h2>
+              <h2 style={{ margin: '0 0 10px', fontSize: '18px', fontWeight: 800 }}>Set Featured Settings</h2>
               <p style={{ margin: '0 0 16px', fontSize: '13px', color: 'var(--gray-1)' }}>
-                Enter the position (1–12) where this product should appear in the featured section.
+                Choose the section and position where this product should appear.
                 {featuredProducts.length > 0 && <> Currently {featuredProducts.length} products are featured.</>}
               </p>
+              
+              <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: 'var(--gray-1)', marginBottom: '6px' }}>Section</label>
+              <select value={sectionInput} onChange={e => setSectionInput(e.target.value)} style={{ ...inputStyle, marginBottom: '16px' }} onFocus={e => e.target.style.borderColor = 'var(--warning)'} onBlur={e => e.target.style.borderColor = 'var(--dark-border)'}>
+                <option value="Premium Tyres & Tubes">Premium Tyres & Tubes</option>
+                <option value="Essential Car Parts">Essential Car Parts</option>
+              </select>
+
+              <label style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: 'var(--gray-1)', marginBottom: '6px' }}>Position (1–12)</label>
               <input type="number" min="1" max="12" value={positionInput} onChange={e => setPositionInput(e.target.value)} placeholder="e.g. 1" autoFocus
-                style={{ ...inputStyle, marginBottom: '16px' }}
+                style={{ ...inputStyle, marginBottom: '20px' }}
                 onFocus={e => e.target.style.borderColor = 'var(--warning)'} onBlur={e => e.target.style.borderColor = 'var(--dark-border)'} />
+              
               <div style={{ display: 'flex', gap: '12px' }}>
                 <button onClick={() => setShowFeaturedModal(false)} style={{ flex: 1, padding: '12px', background: 'var(--dark)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-sm)', cursor: 'pointer', fontWeight: 700, color: 'var(--gray-1)', transition: 'var(--transition)' }}>Cancel</button>
                 <button onClick={handleSetFeaturedPosition} style={{ flex: 1, padding: '12px', background: 'var(--warning)', border: 'none', borderRadius: 'var(--radius-sm)', cursor: 'pointer', fontWeight: 700, color: '#000', transition: 'var(--transition)' }}>Set Position</button>

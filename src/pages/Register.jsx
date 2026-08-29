@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, UserPlus, ShieldCheck, Lock, CheckCircle, Zap, Loader2 } from 'lucide-react';
+import { Eye, EyeOff, UserPlus, ShieldCheck, Lock, CheckCircle, Zap, Loader2, X } from 'lucide-react';
 import { sendOTPEmail } from '../utils/emailService';
 
 export default function Register() {
@@ -12,6 +12,7 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const [showModal, setShowModal] = useState(null);
   
   const navigate = useNavigate();
 
@@ -147,15 +148,15 @@ export default function Register() {
                 {/* Legal Agreements */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {[
-                    { key: 'terms', agreed: agreedTerms, setAgreed: setAgreedTerms, label: 'I have read and accept the', link: 'Terms & Conditions', route: '/terms', extra: 'including the No-Return & No-Refund policy.' },
-                    { key: 'privacy', agreed: agreedPrivacy, setAgreed: setAgreedPrivacy, label: 'I have read and accept the', link: 'Privacy Policy', route: '/privacy', extra: 'and consent to data processing under Nigerian NDPR.' }
+                    { key: 'terms', agreed: agreedTerms, setAgreed: setAgreedTerms, label: 'I have read and accept the', link: 'Terms & Conditions', extra: 'including the No-Return & No-Refund policy.' },
+                    { key: 'privacy', agreed: agreedPrivacy, setAgreed: setAgreedPrivacy, label: 'I have read and accept the', link: 'Privacy Policy', extra: 'and consent to data processing under Nigerian NDPR.' }
                   ].map(item => (
                     <div key={item.key} onClick={() => !item.agreed && item.setAgreed(true)} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '14px 16px', border: `1.5px solid ${item.agreed ? 'var(--success)' : 'var(--dark-border)'}`, borderRadius: 'var(--radius-sm)', background: item.agreed ? 'rgba(0,230,118,0.05)' : 'var(--dark)', cursor: 'pointer', transition: 'var(--transition)' }}>
                       <div style={{ width: '20px', height: '20px', borderRadius: '6px', border: `2px solid ${item.agreed ? 'var(--success)' : 'var(--dark-border)'}`, background: item.agreed ? 'var(--success)' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px', transition: 'var(--transition)' }}>
                         {item.agreed && <span style={{ color: 'var(--black)', fontSize: '12px', fontWeight: 900 }}>✓</span>}
                       </div>
                       <p style={{ fontSize: '12px', color: 'var(--gray-1)', lineHeight: 1.6 }}>
-                        {item.label} <Link to={item.route} onClick={e => e.stopPropagation()} style={{ color: 'var(--primary)', fontWeight: 700 }}>{item.link}</Link> {item.extra}
+                        {item.label} <span onClick={(e) => { e.stopPropagation(); setShowModal(item.key); }} style={{ color: 'var(--primary)', fontWeight: 700, textDecoration: 'underline', cursor: 'pointer' }}>{item.link}</span> {item.extra}
                         {item.agreed && <span style={{ display: 'block', color: 'var(--success)', fontSize: '11px', fontWeight: 700, marginTop: '4px' }}>✓ Accepted</span>}
                       </p>
                     </div>
@@ -179,6 +180,50 @@ export default function Register() {
           <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: 'var(--gray-2)' }}><ShieldCheck size={12} color="var(--info)" /> 100% Safe</span>
         </div>
       </div>
+
+      {/* Legal Modal */}
+      {showModal && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', backdropFilter: 'blur(4px)' }} onClick={() => setShowModal(null)}>
+          <div style={{ background: 'var(--dark-card)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-lg)', padding: '32px', width: '100%', maxWidth: '600px', maxHeight: '80vh', overflowY: 'auto', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', position: 'relative' }} onClick={e => e.stopPropagation()}>
+            <button onClick={() => setShowModal(null)} style={{ position: 'absolute', top: '24px', right: '24px', background: 'var(--dark)', border: '1px solid var(--dark-border)', color: 'var(--white)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+              <X size={16} />
+            </button>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 800, marginBottom: '20px', color: 'var(--white)', paddingRight: '40px' }}>
+              {showModal === 'terms' ? 'Terms & Conditions' : 'Privacy Policy'}
+            </h3>
+            <div style={{ color: 'var(--gray-1)', fontSize: '14px', lineHeight: 1.6, marginBottom: '32px' }}>
+              {showModal === 'terms' ? (
+                <>
+                  <p style={{ marginBottom: '16px' }}>By registering, you agree to Akilapa & Sons' terms of service. All purchases are final once delivered and verified in good condition.</p>
+                  <h4 style={{ color: 'var(--white)', fontWeight: 700, marginBottom: '8px' }}>No-Return & No-Refund Policy</h4>
+                  <p style={{ marginBottom: '16px' }}>We operate a strict No-Return and No-Refund policy. Once an item is purchased and collected/delivered, it cannot be returned for a refund or exchanged unless it is Dead On Arrival (DOA) and verified by our technicians within 24 hours of delivery.</p>
+                  <h4 style={{ color: 'var(--white)', fontWeight: 700, marginBottom: '8px' }}>Account Security</h4>
+                  <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+                </>
+              ) : (
+                <>
+                  <p style={{ marginBottom: '16px' }}>We value your privacy and are committed to protecting your personal data in accordance with the Nigerian Data Protection Regulation (NDPR).</p>
+                  <h4 style={{ color: 'var(--white)', fontWeight: 700, marginBottom: '8px' }}>Data Processing Consent</h4>
+                  <p>By accepting this policy, you consent to our collection, use, and processing of your personal information (including name, phone, address, and email) solely for the purpose of fulfilling your order, providing customer support, and occasionally sending you updates about our services.</p>
+                </>
+              )}
+            </div>
+            <div style={{ display: 'flex', gap: '12px' }}>
+              <button
+                type="button"
+                onClick={() => {
+                  if (showModal === 'terms') setAgreedTerms(true);
+                  else setAgreedPrivacy(true);
+                  setShowModal(null);
+                }}
+                style={{ width: '100%', padding: '14px', background: 'var(--primary)', border: 'none', borderRadius: 'var(--radius-md)', color: 'var(--black)', fontWeight: 800, cursor: 'pointer', transition: 'var(--transition)', boxShadow: '0 8px 24px var(--primary-glow)', fontSize: '15px' }}
+              >
+                I Accept
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

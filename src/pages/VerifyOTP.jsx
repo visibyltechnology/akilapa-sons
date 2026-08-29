@@ -4,17 +4,45 @@ import { ShieldCheck, KeyRound, Zap, ArrowRight, Loader2 } from 'lucide-react';
 import { auth, db } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
+import { sendOTPEmail } from '../utils/emailService';
 
 export default function VerifyOTP() {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const [resending, setResending] = useState(false);
+  const [resendSuccess, setResendSuccess] = useState('');
   
   const [pendingData, setPendingData] = useState(null);
   const [expectedOtp, setExpectedOtp] = useState('');
   
   const navigate = useNavigate();
+
+  const handleResendOTP = async () => {
+    if (resending || !pendingData) return;
+    setResending(true);
+    setError('');
+    setResendSuccess('');
+    
+    try {
+      const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+      const emailSent = await sendOTPEmail(pendingData.email, generatedOtp, pendingData.firstName);
+      
+      if (!emailSent) {
+        throw new Error('Failed to resend verification email.');
+      }
+      
+      sessionStorage.setItem('registrationOTP', generatedOtp);
+      setExpectedOtp(generatedOtp);
+      setResendSuccess('A new OTP has been sent to your email.');
+    } catch (err) {
+      console.error(err);
+      setError(err.message || 'Failed to resend OTP.');
+    } finally {
+      setResending(false);
+    }
+  };
 
   useEffect(() => {
     // Load pending registration from session
@@ -160,8 +188,11 @@ export default function VerifyOTP() {
                 <div style={{ textAlign: 'center' }}>
                   <p style={{ fontSize: '13px', color: 'var(--gray-1)' }}>
                     Didn't receive a code?{' '}
-                    <button type="button" style={{ color: 'var(--primary)', fontWeight: 700, background: 'none', border: 'none', cursor: 'pointer', fontSize: '13px' }}>Resend OTP</button>
+                    <button type="button" onClick={handleResendOTP} disabled={resending} style={{ color: 'var(--primary)', fontWeight: 700, background: 'none', border: 'none', cursor: resending ? 'not-allowed' : 'pointer', fontSize: '13px', opacity: resending ? 0.7 : 1 }}>
+                      {resending ? 'Resending...' : 'Resend OTP'}
+                    </button>
                   </p>
+                  {resendSuccess && <p style={{ color: 'var(--success)', fontSize: '12px', marginTop: '8px' }}>{resendSuccess}</p>}
                 </div>
               </form>
             )}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, Menu, X, Search, ChevronDown, User, LogIn, Heart } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ShoppingCart, Menu, X, Search, ChevronDown, User, LogIn, Heart, ShieldCheck, LogOut } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useModal } from '../context/ModalContext';
 import { useApp } from '../context/AppContext';
@@ -12,8 +12,14 @@ export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const { openCart } = useModal();
-  const { cartCount } = useApp();
+  const { cartCount, user, logout } = useApp();
+  const navigate = useNavigate();
   const location = useLocation();
+
+  const handleLogout = async () => {
+    await logout();
+    navigate('/login');
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -141,12 +147,30 @@ export default function Navbar() {
 
           {/* Auth Buttons – Desktop only */}
           <div className="auth-btns desktop-only">
-            <Link to="/login" className="btn-ghost-sm">
-              <LogIn size={16} /> Log In
-            </Link>
-            <Link to="/signup" className="btn-primary-sm">
-              <User size={16} /> Sign Up
-            </Link>
+            {user?.isAdmin && (
+              <Link to="/admin" className="btn-ghost-sm" style={{ color: 'var(--primary)', borderColor: 'var(--primary)' }}>
+                <ShieldCheck size={16} /> Admin
+              </Link>
+            )}
+            {user ? (
+              <>
+                <Link to="/profile" className="btn-ghost-sm">
+                  <User size={16} /> {user.firstName || 'Account'}
+                </Link>
+                <button onClick={handleLogout} className="btn-primary-sm" style={{ cursor: 'pointer' }}>
+                  <LogOut size={16} /> Sign Out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="btn-ghost-sm">
+                  <LogIn size={16} /> Log In
+                </Link>
+                <Link to="/signup" className="btn-primary-sm">
+                  <User size={16} /> Sign Up
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Hamburger */}
@@ -192,8 +216,18 @@ export default function Navbar() {
                 transition={{ delay: navLinks.length * 0.08 }}
                 className="mobile-auth-btns"
               >
-                <Link to="/login" className="btn-ghost-sm w-full">Log In</Link>
-                <Link to="/signup" className="btn-primary-sm w-full">Sign Up</Link>
+                {user ? (
+                  <>
+                    <Link to="/profile" className="btn-ghost-sm w-full"><User size={14} /> {user.firstName || 'Account'}</Link>
+                    {user.isAdmin && <Link to="/admin" className="btn-ghost-sm w-full" style={{ color: 'var(--primary)' }}><ShieldCheck size={14} /> Admin</Link>}
+                    <button onClick={handleLogout} className="btn-primary-sm w-full" style={{ cursor: 'pointer' }}><LogOut size={14} /> Sign Out</button>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/login" className="btn-ghost-sm w-full">Log In</Link>
+                    <Link to="/signup" className="btn-primary-sm w-full">Sign Up</Link>
+                  </>
+                )}
               </motion.div>
             </nav>
           </motion.div>

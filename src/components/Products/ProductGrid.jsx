@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { getProducts, MOCK_PRODUCTS } from '../../utils/productService';
+import { getProducts } from '../../utils/productService';
 import { ProductCard } from './ProductCard';
 import './ProductGrid.css';
 
@@ -35,7 +35,7 @@ export const ScrollableProductSlider = ({ products }) => {
 };
 
 export default function ProductGrid() {
-  const [products, setProducts] = useState(MOCK_PRODUCTS);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getProducts().then(dbProducts => {
@@ -43,8 +43,9 @@ export default function ProductGrid() {
     });
   }, []);
 
-  const tyres = products.filter(p => p.department === 'Tyres');
-  const otherParts = products.filter(p => p.department !== 'Tyres');
+  const featuredProducts = products.filter(p => p.featured);
+  const tyres = featuredProducts.filter(p => p.featuredSection === 'Premium Tyres & Tubes');
+  const otherParts = featuredProducts.filter(p => p.featuredSection === 'Essential Car Parts');
 
   return (
     <section className="section-padding product-section">
