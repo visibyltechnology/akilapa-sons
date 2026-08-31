@@ -490,15 +490,15 @@ export default function Checkout() {
                       <div style={{ background: 'var(--black)', padding: '16px', borderRadius: 'var(--radius-sm)', display: 'grid', gap: '12px', border: '1px solid var(--dark-border)', marginBottom: '20px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                           <span style={{ color: 'var(--gray-1)', fontSize: '13px' }}>Bank Name</span>
-                          <span style={{ fontWeight: 700, fontSize: '14px' }}>Wema Bank</span>
+                          <span style={{ fontWeight: 700, fontSize: '14px' }}>JaizBank</span>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                           <span style={{ color: 'var(--gray-1)', fontSize: '13px' }}>Account Name</span>
-                          <span style={{ fontWeight: 700, fontSize: '14px' }}>Akilapa &amp; Sons</span>
+                          <span style={{ fontWeight: 700, fontSize: '14px' }}>Akilapa &amp; Sons Auto Workshop</span>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                           <span style={{ color: 'var(--gray-1)', fontSize: '13px' }}>Account Number</span>
-                          <span style={{ fontWeight: 800, fontSize: '18px', color: 'var(--white)', letterSpacing: '1px' }}>0125986348</span>
+                          <span style={{ fontWeight: 800, fontSize: '18px', color: 'var(--white)', letterSpacing: '1px' }}>0005998212</span>
                         </div>
                       </div>
 
