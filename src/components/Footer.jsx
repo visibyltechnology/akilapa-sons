@@ -32,8 +32,7 @@ export default function Footer() {
               <div className="contact-item">
                 <Mail size={20} className="contact-icon" />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
-                  <a href="mailto:info@akilapamultiserviceltd.com" style={{ color: 'inherit' }}>info@akilapamultiserviceltd.com</a>
-                  <a href="mailto:olusayoakilapa@gmail.com" style={{ color: 'inherit' }}>olusayoakilapa@gmail.com</a>
+                  <a href="mailto:info@akilapamultiservices.com.ng" style={{ color: 'inherit' }}>info@akilapamultiservices.com.ng</a>
                 </div>
               </div>
               <div className="contact-item" style={{ alignItems: 'flex-start' }}>
