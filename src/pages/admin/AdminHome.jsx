@@ -10,12 +10,13 @@ export default function AdminHome() {
   ];
 
   const quickActions = [
-    { label: 'Add New Product', icon: <PlusCircle size={20} />, link: '/admin/add-product', desc: 'Upload a product to your store' },
+    { label: 'Add New Product', icon: <PlusCircle size={20} />, link: '/admin/products/add', desc: 'Upload car parts, tyres or accessories' },
     { label: 'Manage Products', icon: <Package size={20} />, link: '/admin/products', desc: 'Edit, feature, or remove products' },
     { label: 'View Orders', icon: <ClipboardList size={20} />, link: '/admin/orders', desc: 'Review and update customer orders' },
     { label: 'View Users', icon: <Users size={20} />, link: '/admin/users', desc: 'See all registered customers' },
     { label: 'Visitor Locations', icon: <MapPin size={20} />, link: '/admin/locations', desc: 'Track where visitors are browsing from' },
     { label: 'Site Settings', icon: <Settings size={20} />, link: '/admin/settings', desc: 'Manage announcement ticker and hero carousel' },
+    { label: 'Subscriptions', icon: <TrendingUp size={20} />, link: '/admin/subscriptions', desc: 'Manage maintenance service subscription plans' },
   ];
 
   return (
@@ -24,7 +25,7 @@ export default function AdminHome() {
         <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '28px', fontWeight: 900, marginBottom: '6px' }}>
           Welcome back, Admin <span style={{ color: 'var(--primary)' }}>⚡</span>
         </h1>
-        <p style={{ color: 'var(--gray-1)', fontSize: '14px' }}>Manage the Akilapa &amp; Sons storefront from here.</p>
+        <p style={{ color: 'var(--gray-1)', fontSize: '14px' }}>Manage the Akilapa &amp; Sons Auto Workshop storefront from here.</p>
       </div>
 
       {/* Stats */}

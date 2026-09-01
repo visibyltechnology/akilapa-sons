@@ -15,17 +15,17 @@ export default function AdminSettings() {
   };
 
   const [tickerMessages, setTickerMessages] = useState([
-    "⚡ Best Deals on Electronics & Home Appliances — Limited Offers, Shop Now!",
-    "🚚 Enjoy Fast Delivery Across Lagos — Free Shipping on Orders From ₦999,999!"
+    "⚡ Best Deals on Car Parts & Accessories — Limited Offers, Shop Now!",
+    "🚚 Enjoy Fast Delivery Across Lagos — Quality Auto Maintenance Guaranteed!"
   ]);
 
   const [heroSlides, setHeroSlides] = useState([
     {
-      title: "Upgrade Your Living Space",
-      subtitle: "Premium Air Conditioners, Televisions, and Home Appliances from world-class brands.",
-      buttonText: "Shop Appliances",
+      title: "Premium Car Parts & Tyres",
+      subtitle: "Top-quality auto parts, batteries, and accessories for all vehicle makes.",
+      buttonText: "Shop Parts",
       link: "/shop",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1920&q=80"
+      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1920&q=80"
     }
   ]);
 

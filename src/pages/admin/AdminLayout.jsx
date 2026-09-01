@@ -3,7 +3,7 @@ import { Navigate, Outlet, NavLink, useNavigate, Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import {
   Package, PlusCircle, LogOut, Users, ClipboardList,
-  LayoutDashboard, Menu, X, Loader2, Tag, Briefcase, Settings, MapPin, Home
+  LayoutDashboard, Menu, X, Loader2, Tag, Briefcase, Settings, MapPin, Home, CreditCard
 } from 'lucide-react';
 
 export default function AdminLayout() {
@@ -33,6 +33,7 @@ export default function AdminLayout() {
     { to: '/admin/brands', icon: <Briefcase size={18} />, label: 'Brands' },
     { to: '/admin/locations', icon: <MapPin size={18} />, label: 'Locations' },
     { to: '/admin/settings', icon: <Settings size={18} />, label: 'Site Settings' },
+    { to: '/admin/subscriptions', icon: <CreditCard size={18} />, label: 'Subscriptions' },
   ];
 
   const handleLogout = async () => {

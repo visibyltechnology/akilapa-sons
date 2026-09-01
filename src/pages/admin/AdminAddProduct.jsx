@@ -58,7 +58,7 @@ export default function AdminAddProduct() {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [showFeaturedModal, setShowFeaturedModal] = useState(false);
   const [positionInput, setPositionInput] = useState('');
-  const [sectionInput, setSectionInput] = useState('Essential Car Parts');
+  const [sectionInput, setSectionInput] = useState('Car Parts & Accessories');
   const [categories, setCategories] = useState([]);
   const [brands, setBrands] = useState([]);
 
