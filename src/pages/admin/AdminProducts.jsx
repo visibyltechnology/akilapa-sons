@@ -145,7 +145,7 @@ export default function AdminProducts() {
           <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '26px', fontWeight: 900, margin: 0 }}>Manage Products</h1>
           <p style={{ color: 'var(--gray-1)', fontSize: '13px', marginTop: '4px' }}>{products.length} product{products.length !== 1 ? 's' : ''} in your catalogue</p>
         </div>
-        <Link to="/admin/add-product" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--primary)', color: 'var(--black)', padding: '12px 22px', borderRadius: 'var(--radius-md)', fontWeight: 800, fontSize: '13px', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.06em', boxShadow: '0 4px 16px var(--primary-glow)' }}>
+        <Link to="/admin/products/add" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--primary)', color: 'var(--black)', padding: '12px 22px', borderRadius: 'var(--radius-md)', fontWeight: 800, fontSize: '13px', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.06em', boxShadow: '0 4px 16px var(--primary-glow)' }}>
           <PlusCircle size={16} /> Add Product
         </Link>
       </div>
@@ -204,7 +204,7 @@ export default function AdminProducts() {
           <Package size={56} color="var(--gray-2)" style={{ margin: '0 auto 16px' }} />
           <p style={{ color: 'var(--gray-1)', fontWeight: 600, fontSize: '16px', marginBottom: '16px' }}>{search || filterCat !== 'All' ? 'No products match your filters.' : 'No products yet.'}</p>
           {!search && filterCat === 'All' && (
-            <Link to="/admin/add-product" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--primary)', color: 'var(--black)', padding: '12px 24px', borderRadius: 'var(--radius-md)', fontWeight: 800, textDecoration: 'none' }}>
+            <Link to="/admin/products/add" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--primary)', color: 'var(--black)', padding: '12px 24px', borderRadius: 'var(--radius-md)', fontWeight: 800, textDecoration: 'none' }}>
               <PlusCircle size={16} /> Add First Product
             </Link>
           )}

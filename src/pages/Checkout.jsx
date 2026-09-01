@@ -575,7 +575,23 @@ export default function Checkout() {
 
                       <div>
                         <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--white)', marginBottom: '8px' }}>Upload Initial Deposit Receipt <span style={{ color: 'var(--danger)' }}>*</span></label>
-                        <p style={{ fontSize: '12px', color: 'var(--gray-1)', marginBottom: '12px' }}>Please transfer your deposit of <strong>{formatCurrency(depositAmount)}</strong> to the account above — Akilapa &amp; Sons.</p>
+                        <p style={{ fontSize: '12px', color: 'var(--gray-1)', marginBottom: '12px' }}>Please transfer your deposit of <strong>{formatCurrency(depositAmount)}</strong> to the account below.</p>
+                        
+                        <div style={{ background: 'var(--black)', padding: '16px', borderRadius: 'var(--radius-sm)', display: 'grid', gap: '12px', border: '1px solid var(--dark-border)', marginBottom: '20px' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <span style={{ color: 'var(--gray-1)', fontSize: '13px' }}>Bank Name</span>
+                            <span style={{ fontWeight: 700, fontSize: '14px' }}>JaizBank</span>
+                          </div>
+                          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <span style={{ color: 'var(--gray-1)', fontSize: '13px' }}>Account Name</span>
+                            <span style={{ fontWeight: 700, fontSize: '14px' }}>Akilapa &amp; Sons Auto Workshop</span>
+                          </div>
+                          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <span style={{ color: 'var(--gray-1)', fontSize: '13px' }}>Account Number</span>
+                            <span style={{ fontWeight: 800, fontSize: '18px', color: 'var(--white)', letterSpacing: '1px' }}>0005998212</span>
+                          </div>
+                        </div>
+
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                           <label style={{ flex: 1, background: 'var(--dark-card)', border: '1.5px dashed var(--dark-border)', padding: '16px', borderRadius: 'var(--radius-sm)', textAlign: 'center', cursor: 'pointer', transition: 'var(--transition)' }}>
                             <Upload size={20} color="var(--primary)" style={{ margin: '0 auto 8px' }} />
