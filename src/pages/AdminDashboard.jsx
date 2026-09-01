@@ -74,53 +74,16 @@ function PlanForm({ initial = null, onSave, onCancel }) {
 }
 
 export default function AdminDashboard() {
-  const [isAuthed, setIsAuthed] = useState(false);
-  const [password, setPassword] = useState('');
-  const [authError, setAuthError] = useState('');
   const [editingId, setEditingId] = useState(null);
   const [isAdding, setIsAdding] = useState(false);
   const { plans, addPlan, updatePlan, deletePlan, resetToDefaults } = useSubscription();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (password === ADMIN_PASSWORD) {
-      setIsAuthed(true);
-      setAuthError('');
-    } else {
-      setAuthError('Incorrect password. Please try again.');
-    }
-  };
-
-  if (!isAuthed) {
-    return (
-      <div className="admin-login-page section-padding">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="admin-login-card glass-card"
-          >
-            <Shield size={48} className="text-primary" />
-            <h1>Admin Access</h1>
-            <p>Enter your password to manage subscription plans.</p>
-            <form onSubmit={handleLogin} className="login-form">
-              <div className="form-group">
-                <input
-                  type="password"
-                  placeholder="Admin password"
-                  value={password}
-                  onChange={e => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-              {authError && <p className="error-msg">{authError}</p>}
-              <button type="submit" className="btn-primary w-full">Log In</button>
-            </form>
-          </motion.div>
-        </div>
-      </div>
-    );
-  }
+  // Mock active subscriptions for the tracker
+  const activeSubscriptions = [
+    { id: 1, user: 'John Doe', email: 'john@example.com', plan: 'Quarterly Oil & Filter', status: 'Active', nextBilling: '2026-12-01' },
+    { id: 2, user: 'Jane Smith', email: 'jane@example.com', plan: 'Monthly Checkup', status: 'Active', nextBilling: '2026-10-01' },
+    { id: 3, user: 'Samuel O.', email: 'sam@example.com', plan: 'Annual Overhaul', status: 'Past Due', nextBilling: '2026-08-15' }
+  ];
 
   return (
     <div className="admin-dashboard section-padding">
@@ -205,6 +168,44 @@ export default function AdminDashboard() {
               <p>No subscription plans yet. Add one above!</p>
             </div>
           )}
+        </div>
+
+        {/* Subscription Tracker */}
+        <div style={{ marginTop: '48px' }}>
+          <h2 className="section-title" style={{ fontSize: '20px', marginBottom: '16px' }}>Active <span className="text-primary">Subscribers Tracker</span></h2>
+          <div className="glass-card" style={{ padding: 0, overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+              <thead>
+                <tr style={{ borderBottom: '1px solid var(--dark-border)', background: 'rgba(255,255,255,0.02)' }}>
+                  <th style={{ padding: '16px', fontSize: '13px', color: 'var(--gray-2)' }}>User</th>
+                  <th style={{ padding: '16px', fontSize: '13px', color: 'var(--gray-2)' }}>Plan</th>
+                  <th style={{ padding: '16px', fontSize: '13px', color: 'var(--gray-2)' }}>Status</th>
+                  <th style={{ padding: '16px', fontSize: '13px', color: 'var(--gray-2)' }}>Next Billing</th>
+                </tr>
+              </thead>
+              <tbody>
+                {activeSubscriptions.map(sub => (
+                  <tr key={sub.id} style={{ borderBottom: '1px solid var(--dark-border)' }}>
+                    <td style={{ padding: '16px' }}>
+                      <div style={{ fontWeight: 800, fontSize: '14px' }}>{sub.user}</div>
+                      <div style={{ fontSize: '12px', color: 'var(--gray-2)' }}>{sub.email}</div>
+                    </td>
+                    <td style={{ padding: '16px', fontSize: '14px', fontWeight: 600 }}>{sub.plan}</td>
+                    <td style={{ padding: '16px' }}>
+                      <span style={{ 
+                        fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', padding: '4px 10px', borderRadius: '20px',
+                        background: sub.status === 'Active' ? 'rgba(0, 230, 118, 0.1)' : 'rgba(255, 61, 0, 0.1)',
+                        color: sub.status === 'Active' ? 'var(--success)' : 'var(--danger)'
+                      }}>
+                        {sub.status}
+                      </span>
+                    </td>
+                    <td style={{ padding: '16px', fontSize: '14px', color: 'var(--gray-1)' }}>{sub.nextBilling}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

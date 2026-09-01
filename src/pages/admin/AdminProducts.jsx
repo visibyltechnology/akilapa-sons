@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { formatCurrency } from '../../utils/helpers';
 
-const CATEGORIES = ['All', 'Smartphones', 'Laptops', 'Televisions', 'Audio', 'Gaming', 'Accessories', 'Home Appliances'];
+const CATEGORIES = ['All', 'Car Parts', 'Tyres & Wheels', 'Car Accessories', 'Maintenance Services', 'Lubricants & Fluids'];
 
 function ProductRow({ product, onDelete, onToggleHide, onToggleFeatured }) {
   const [hovered, setHovered] = useState(false);
