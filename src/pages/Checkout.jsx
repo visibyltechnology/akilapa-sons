@@ -170,7 +170,7 @@ export default function Checkout() {
             email: formData.email || user?.email || "guest@example.com",
           },
           items: cart.map((i) => ({
-            image_url: i.imgUrl || i.image || i.img || "",
+            image_url: i.image || i.imgUrl || (i.images && i.images[0]) || "https://placehold.co/400x400/png?text=Product",
             item_url: `${window.location.origin}/product/${i.id}`,
             name: i.name,
             unit_price: i.price,
