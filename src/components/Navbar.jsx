@@ -38,22 +38,22 @@ export default function Navbar() {
       name: 'Car Parts',
       path: '/parts',
       dropdown: [
-        { name: 'New Tyres & Tubes', path: '/parts/tyres' },
-        { name: 'Engine Oils', path: '/parts/oils' },
+        { name: 'All Brand of new Tyres & Tubes', path: '/parts/tyres' },
+        { name: 'Vehicles Alloy Wheel', path: '/parts/wheels' },
+        { name: 'Customer Leather Foot Mat', path: '/parts/accessories' },
+        { name: 'All kind of Engine Oil', path: '/parts/oils' },
         { name: 'Original Oil Filters', path: '/parts/filters' },
-        { name: 'Alloy Wheels', path: '/parts/wheels' },
-        { name: 'Leather Foot Mats', path: '/parts/accessories' },
       ]
     },
     {
       name: 'Services',
       path: '/services',
       dropdown: [
-        { name: 'Vehicle Diagnostics', path: '/diagnostics' },
-        { name: 'Digital Wheel Alignment', path: '/services/alignment' },
+        { name: 'Using Oil Draining machine', path: '/services/oil-drain' },
+        { name: 'Vehicle Diagnosing machine', path: '/diagnostics' },
+        { name: 'Fitting Tyres machine', path: '/services/tyre-fitting' },
         { name: 'Digital Wheel Balancing', path: '/services/balancing' },
-        { name: 'Tyre Fitting Machine', path: '/services/tyre-fitting' },
-        { name: 'Oil Draining Machine', path: '/services/oil-drain' },
+        { name: 'Digital Wheel Allignment', path: '/services/alignment' },
       ]
     },
     { name: 'Shop', path: '/shop' },

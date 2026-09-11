@@ -222,7 +222,8 @@
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .sub-plans-row {
-    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
     gap: 16px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -238,7 +239,9 @@
 
   .sub-plan-card {
     scroll-snap-align: start;
-    min-width: 260px;
+    min-width: 280px;
+    max-width: 85vw;
+    flex-shrink: 0;
   }
 }
 

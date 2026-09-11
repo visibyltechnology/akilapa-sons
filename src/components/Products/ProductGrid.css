@@ -1,6 +1,13 @@
 .product-section {
   position: relative;
   z-index: 10;
+  margin-top: -6rem; /* Moved closer to the hero section */
+}
+
+@media (max-width: 768px) {
+  .product-section {
+    margin-top: -3rem;
+  }
 }
 
 .section-header {

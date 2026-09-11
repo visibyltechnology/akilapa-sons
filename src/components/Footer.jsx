@@ -35,8 +35,14 @@ export default function Footer() {
                   <a href="mailto:info@akilapamultiservices.com.ng" style={{ color: 'inherit' }}>info@akilapamultiservices.com.ng</a>
                 </div>
               </div>
+              <div className="contact-item">
+                <Mail size={20} className="contact-icon" />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                  <a href="mailto:olusayoakilapa@gmail.com" style={{ color: 'inherit' }}>olusayoakilapa@gmail.com</a>
+                </div>
+              </div>
               <div className="contact-item" style={{ alignItems: 'flex-start' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="contact-icon" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="contact-icon" style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
                   <span>Mon-Fri: 9:00am - 6:00pm</span>
                   <span>Sat: 9:30am - 5:00pm</span>
