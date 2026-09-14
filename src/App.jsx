@@ -21,6 +21,7 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Wishlist from './pages/Wishlist';
 import Profile from './pages/Profile';
+import Contact from './pages/Contact';
 
 // Admin Pages
 import AdminLayout from './pages/admin/AdminLayout';
@@ -102,7 +103,7 @@ export default function App() {
                     <Route path="/profile" element={<Profile />} />
 
                     {/* Contact */}
-                    <Route path="/contact" element={<Placeholder title="Contact Us" />} />
+                    <Route path="/contact" element={<Contact />} />
 
                     {/* Fallback */}
                     <Route path="*" element={<Placeholder title="404 – Page Not Found" />} />

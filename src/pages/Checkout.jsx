@@ -525,8 +525,8 @@ export default function Checkout() {
                       <h4 style={{ fontSize: '15px', fontWeight: 800, color: 'var(--primary)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <Truck size={18} /> Installment Plan Details
                       </h4>
-                      <p style={{ fontSize: '13px', color: 'var(--gray-1)', marginBottom: '16px' }}>
-                        Choose a payment plan that works for you. A 30% upfront deposit is required before shipping.
+                      <p style={{ fontSize: '13px', color: 'var(--gray-1)', marginBottom: '16px', lineHeight: '1.5' }}>
+                        Choose a payment plan that works for you. Complete payment required before shipping. Please note: product will only be shipped after full amount has been received even for installment payment plan.
                       </p>
 
                       <div style={{ marginBottom: '20px' }}>
