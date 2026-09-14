@@ -25,7 +25,7 @@ export default function Navbar() {
 
   const handleSearch = (e) => {
     if (e.key === 'Enter' && searchQuery.trim()) {
-      navigate(`/shop?search=${encodeURIComponent(searchQuery.trim())}`);
+      navigate(`/shop?q=${encodeURIComponent(searchQuery.trim())}`);
       setIsSearchOpen(false);
       setSearchQuery('');
     }
