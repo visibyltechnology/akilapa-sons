@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
-    { "source": "/:path*", "destination": "https://silverbell-projects.vercel.app/:path*" }
+  "routes": [
+    { "src": "/(.*)", "dest": "https://silverbell-projects.vercel.app/$1" }
   ]
 }
-
