@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://silverbell-projects.vercel.app/$1"
+    }
+  ]
+}
